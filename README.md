@@ -10,7 +10,8 @@ FEB-UI是一个React生态的组件库
 - React 19
 
 ## 目录
-+ feb-ui
-  + demo 组件演示目录
-  + dev  通用组件开发目录
-  + icon ICON组件开发目录
++ feb-ui - 项目根目录
+  + demo - 组件演示目录
+  + dev  - 通用组件源码根目录
+    + README.md - 说明文档
+  + icon - ICON组件源码根目录
