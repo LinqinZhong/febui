@@ -1,0 +1,13 @@
+{
+  "name": "feb-ui",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "echo 请不要在根目录安装模块",
+    "start": "cd dev && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
