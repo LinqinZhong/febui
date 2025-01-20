@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './theme/canon/index'
-import { ButtonTest } from './test/button';
-
+import { FebRoutes } from './route';
+import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
-  <React.StrictMode>
-    <ButtonTest/>
-  </React.StrictMode>
+  <BrowserRouter>
+    <FebRoutes />
+  </BrowserRouter>
 );

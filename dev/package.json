@@ -15,13 +15,19 @@
     "lodash.throttle": "^4.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router": "^7.1.3",
+    "react-router-dom": "^6.28.2",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "route":"node ./src/route/generate.js",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update": "npm run route",
+    "prestart": "node ./src/route/generate.js"
   },
   "eslintConfig": {
     "extends": [

@@ -1,10 +1,13 @@
+/**
+ * @description 按钮（FButton）
+ * @file button.tsx
+ * @author linqin.zhong
+ */
+
 import React, { useState } from "react"
 import { FButton } from "../component/base/button/FButton"
 
-/**
- * 按钮组件测试
- */
-export const ButtonTest = function () {
+export const Button = function () {
   const [isLoading, setLoading] = useState(false)
   const onClick = () => {
     console.log('加载中...');
@@ -23,10 +26,9 @@ export const ButtonTest = function () {
       )
     }
   }
-  return (<>
-    <h1>按钮组件测试</h1>
+  return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
       {elements}
     </div>
-  </>)
+  )
 }

@@ -4,9 +4,6 @@ import { generateId } from "../../../utils/id.util";
 type Props = FebProps
 export class FLoading extends Component<Props> {
 
-  constructor(props: Props) {
-    super(props)
-  }
   render(): ReactNode {
     const id = 'linear-gradient-'+generateId('loading')    
     return (
