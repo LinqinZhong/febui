@@ -1,4 +1,5 @@
-declare type FebProps<T = {}> = T & {
+declare type FebProps<T = {}, E = HTMLElement> = T & {
   children?: ReactNode
-  className?: string
+  className?: string,
+  style?: HTMLAttributes<E>
 }

@@ -9,7 +9,29 @@ import { FLoading } from "../component/base/loading/FLoading"
 
 export const Button = function () {
   return (
-    <FLoading/>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 50 }}>
+      <div>
+        <span>默认状态</span>
+        <FLoading />
+      </div>
+      <div>
+        <span>快</span>
+        <FLoading speed="fast" />
+      </div>
+      <div>
+        <span>慢</span>
+        <FLoading speed="slow" />
+      </div>
+      <div>
+        <span>转一圈2s</span>
+        <FLoading duration={2000} />
+      </div>
+      <div>
+        <span>改变颜色</span>
+        <FLoading style={{ color: 'red' }} />
+        <FLoading style={{ color: 'blue' }} />
+      </div>
+    </div>
   )
 }
 
