@@ -1,6 +1,6 @@
 # FEB-UI
 ## 一、介绍
-FEB-UI是一个React生态的组件库
+FEB-UI是一个React生态的组件库。在线演示文档：https://xxx.xxx.com/feb-ui/doc。
 
 ## 二、贡献者
 - linqin.zhong（2952868313@qq.com）

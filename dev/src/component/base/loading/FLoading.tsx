@@ -11,16 +11,25 @@ const SPEEDS = {
   fast: 540,
   slow: 1900
 }
+/**
+ * 加载组件
+ * @author linqin.zhong
+ * @date 2025/01/19 15:19:09
+ * @example
+ * <FLoading>
+ */
 export class FLoading extends Component<Props> {
+
+  // ID
+  private id = generateId('loading')
 
   static defaultProps = {
     speed: 'normal'
   }
 
   render(): ReactNode {
-    const id = 'linear-gradient-' + generateId('loading')
-    const dur = (this.props.duration? this.props.duration  : SPEEDS[this.props.speed!]) + 'ms'
-    
+    const dur = (this.props.duration ? this.props.duration : SPEEDS[this.props.speed!]) + 'ms'
+    const id = 'linear-gradient-' + this.id
     return (
       <svg
         style={this.props.style}

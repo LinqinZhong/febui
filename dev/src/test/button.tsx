@@ -17,13 +17,15 @@ export const Button = function () {
     }, 4000);
   }
   const elements = []
-  for (const variant of ['base', 'outline', 'dashed', 'text']) {
-    for (const type of ['default', 'primary', 'danger', 'safe', 'warn']) {
-      elements.push(
-        // @ts-nocheck
-        // @ts-ignore
-        <FButton loading={isLoading} onClick={onClick} variant={variant} type={type}>提交</FButton>
-      )
+  for (const size of ['small', 'medium', 'large']) {
+    for (const variant of ['base', 'outline', 'dashed', 'text']) {
+      for (const type of ['default', 'primary', 'danger', 'safe', 'warn']) {
+        elements.push(
+          // @ts-nocheck
+          // @ts-ignore
+          <FButton size={size} loading={isLoading} onClick={onClick} variant={variant} type={type}>提交</FButton>
+        )
+      }
     }
   }
   return (

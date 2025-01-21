@@ -37,7 +37,7 @@ type Props = FebProps<{
   // 大小
   size?: ButtonSize
   // 防抖
-  deboundce?: number | DeboundceFn
+  debounce?: number | debounceFn
   // 节流
   throttle?: number | ThrottleFn
   // 加载中
@@ -50,8 +50,8 @@ type Props = FebProps<{
  * 按钮组件
  * @author linqin.zhong
  * @date 2025/01/19 15:07:33
- * @exampl
- * <FButton deboundce={200} type="primary">提交
+ * @example
+ * <FButton debounce={200} type="primary">提交
  * </FButton>
  */
 export class FButton extends Component<Props> {
@@ -74,18 +74,18 @@ export class FButton extends Component<Props> {
    * 初始化点击事件
    */
   initOnClick() {
-    if (!isUndefined(this.props.deboundce) && !isUndefined(this.props.throttle)) {
+    if (!isUndefined(this.props.debounce) && !isUndefined(this.props.throttle)) {
       // 不能同时使用节流和防抖，默认采用防抖
       console.warn('Not allowed use `debounce` and `throttle` at the same time, ignoring throttle.');
     }
-    if (isFunction(this.props.deboundce)) {
+    if (isFunction(this.props.debounce)) {
       // 用户自定义防抖函数
-      this.onClick = this.props.deboundce as DeboundceFn
-    } else if (isNumber(this.props.deboundce)) {
+      this.onClick = this.props.debounce as debounceFn
+    } else if (isNumber(this.props.debounce)) {
       // 创建防抖函数
       this.onClick = debounce(() => {
         if (this.props.onClick) this.props.onClick()
-      }, Math.max(0, this.props.deboundce as number))
+      }, Math.max(0, this.props.debounce as number))
     } else if (isFunction(this.props.throttle)) {
       // 用户自定义节流函数
       this.onClick = this.props.throttle as ThrottleFn

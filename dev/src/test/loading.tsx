@@ -23,7 +23,7 @@ export const Button = function () {
         <FLoading speed="slow" />
       </div>
       <div>
-        <span>转一圈2s</span>
+        <span>2秒/圈</span>
         <FLoading duration={2000} />
       </div>
       <div>
