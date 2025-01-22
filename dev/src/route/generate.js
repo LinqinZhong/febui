@@ -16,7 +16,7 @@ const onProcess = (i) => {
     console.log('解析生成路由',parseFloat(i*100).toFixed(2)+'%');
 }
 dirs.forEach((fileName,i) => {
-//   onProcess((i+1)/dirs.length)
+  onProcess((i+1)/dirs.length)
   const p = path.resolve(dirPath, fileName);
   const value = String(fs.readFileSync(p));
   const i0 = value.indexOf("@description ") + 13;
