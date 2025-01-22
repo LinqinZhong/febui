@@ -1,0 +1,1 @@
+type FLoadingSpeed = 'normal' | 'fast' | 'slow'
