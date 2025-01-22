@@ -62,14 +62,14 @@ npm install
 
 ### (二) 开始开发（示例）
 1. 在`master`分支下创建新分支，命名为`feature-button-mike`，其中button为组件名，采用小驼峰命名法命名，mike为作者名称，也采用小驼峰命名法命名
-2. 在项目根目录下执行`npm install`安装全局依赖，然后执行`npm run dev`运行项目，访问  http://locolhost:3000 进入组件调试工具页
+2. 在项目根目录下执行`npm install`安装全局依赖，然后执行`npm run dev`运行项目，访问  http://localhost:3000 进入组件调试工具页
 3. 在`./src/component/base`下创建`button`目录
 4. 在`button`目录下创建`FButton.tsx`文件，并输入`dc`使用代码片段快速创建模板，并完成相关配置
 5. 在`./src/types`目录下创建组件相关的类型定义文件，并定义类型
 6. 在`button`目录下创建`style.module.less`样式文件，并编写样式
 7. 在`./src/test`目录下创建`button.tsx`测试文件，并输入`dt`使用代码片段快速创建模板，并完成相关配置
 8. 使用控制台在项目根目录下执行`npm run update`更新项目配置
-9. 重新浏览 http://locolhost:3000 ，可以看到菜单中出现了新创建的`button.tsx`测试文件对应的菜单项
+9. 重新浏览 http://localhost:3000 ，可以看到菜单中出现了新创建的`button.tsx`测试文件对应的菜单项
 10. 开始开发并调试
 
 ### (三) 开发组件
