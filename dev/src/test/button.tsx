@@ -62,6 +62,7 @@ export const VariantTest = function () {
 export const LoadingTest = function () {
   const [isLoading1, setLoading1] = useState(false)
   const [isLoading2, setLoading2] = useState(false)
+  const [isLoading3, setLoading3] = useState(false)
   const onClick = (setLoading: ActionFn) => {
     setLoading(true)
     setTimeout(() => {
@@ -73,6 +74,7 @@ export const LoadingTest = function () {
     {(<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
       <FButton loading={isLoading1} onClick={onClick.bind(null, setLoading1)} type='default'>点我加载</FButton>
       <FButton loading={isLoading2} onClick={onClick.bind(null, setLoading2)} type='primary'>点我加载</FButton>
+      <FButton loading={isLoading3} onClick={onClick.bind(null, setLoading3)} type='warn' variant="text">点我加载</FButton>
     </div>)}
   </>)
 }

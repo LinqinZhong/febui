@@ -48,7 +48,7 @@
     width: var(--h);
     height: var(--h);
     border-radius: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     min-width: unset;
   }
 
@@ -56,7 +56,7 @@
   &.square {
     width: var(--h);
     height: var(--h);
-    padding: 1rem;
+    padding: 0.5rem;
     min-width: unset;
   }
 
@@ -68,7 +68,7 @@
       background: var(--text-color-15);
       color: var(--text-color-5);
 
-      &:hover {
+      &:not(.loading):hover{
         background: var(--text-color-14)
       }
     }
@@ -78,7 +78,7 @@
       background: var(--primary-color-8);
       color: var(--text-color-15);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--primary-color-9)
       }
 
@@ -90,7 +90,7 @@
       background: var(--danger-color-8);
       color: var(--text-color-15);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--danger-color-9)
       }
     }
@@ -100,7 +100,7 @@
       background: var(--warn-color-8);
       color: var(--text-color-15);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--warn-color-9)
       }
     }
@@ -110,7 +110,7 @@
       background: var(--safe-color-6);
       color: var(--text-color-15);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--safe-color-7)
       }
     }
@@ -125,7 +125,7 @@
       border: 1px solid var(--text-color-14);
       color: var(--text-color-5);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--text-color-15);
       }
     }
@@ -135,7 +135,7 @@
       border: 1px solid var(--primary-color-8);
       color: var(--primary-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--primary-color-16);
       }
     }
@@ -145,7 +145,7 @@
       border: 1px solid var(--danger-color-8);
       color: var(--danger-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--danger-color-16);
       }
     }
@@ -155,7 +155,7 @@
       border: 1px solid var(--warn-color-8);
       color: var(--warn-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--warn-color-16);
       }
     }
@@ -165,7 +165,7 @@
       border: 1px solid var(--safe-color-8);
       color: var(--safe-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--safe-color-16);
       }
     }
@@ -180,7 +180,7 @@
       border: 1px dashed var(--text-color-14);
       color: var(--text-color-5);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--text-color-15);
       }
     }
@@ -190,7 +190,7 @@
       border: 1px dashed var(--primary-color-8);
       color: var(--primary-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--primary-color-16);
       }
     }
@@ -200,7 +200,7 @@
       border: 1px dashed var(--danger-color-8);
       color: var(--danger-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--danger-color-16);
       }
     }
@@ -210,7 +210,7 @@
       border: 1px dashed var(--warn-color-8);
       color: var(--warn-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--warn-color-16);
       }
     }
@@ -220,7 +220,7 @@
       border: 1px dashed var(--safe-color-8);
       color: var(--safe-color-7);
 
-      &:hover {
+      &:not(.loading):hover {
         background: var(--safe-color-16);
       }
     }
@@ -228,7 +228,7 @@
 
   /* 文本态 */
   &.text {
-    &:hover {
+    &:not(.loading):hover {
       background: var(--text-color-15);
     }
 
@@ -256,5 +256,9 @@
     &.safe {
       color: var(--safe-color-7);
     }
+  }
+
+  &.loading{
+    cursor:wait;
   }
 }

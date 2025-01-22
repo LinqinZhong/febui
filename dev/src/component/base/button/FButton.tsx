@@ -81,20 +81,21 @@ export class FButton extends Component<Props> {
     }
   }
   render() {
+    const loading = this.props.loading ? <FLoading  className={styles.loading} /> : null
     const className = [
       styles.button,
       styles[this.props.variant as string],
       styles[this.props.type as string],
       styles[this.props.shape as string],
-      styles[this.props.size as string]
+      styles[this.props.size as string],
     ]
+    if(loading) className.push(styles.loading)
     const handleClick = () => {
       if (this.props.loading) return
       if (this.onClick) {
         this.onClick()
       }
     }
-    const loading = this.props.loading ? <FLoading  className={styles.loading} /> : null
     return (
       <div className={className.join(' ')} onClick={handleClick}>
         {loading}
