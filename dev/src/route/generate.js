@@ -32,7 +32,7 @@ dirs.forEach((fileName,i) => {
     imports.push(`import {${v} as ${cname}} from '${ip}'`);
     components.push(cname);
   }
-  const element = `<><h1>${label}</h1><div>${components.map((c) => `<${c}/>`).join()}</div></>`;
+  const element = `<><h1>${label}</h1><div>${components.map((c) => `<${c}/>`).join('<br/>')}</div></>`;
   routes.push(`{label: '${label}', path: '/${name}', element: ${element}}`);
 });
 const res = `/**\n * 路由配置，本文件由代码生成，请勿修改 \n * @file route.js\n */\n${imports.join(';\n')}\nexport const routes = [${routes.join(',')}]`

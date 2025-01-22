@@ -30,7 +30,7 @@ export const FebRoutes = function () {
             }>
                 {
                     routes.map(
-                        (route: any) => <NavLink onClick={() => setCurrent(route.path)} style={
+                        (route: any) => <NavLink key={route.path} onClick={() => setCurrent(route.path)} style={
                             {
                                 width: 'fit-content',
                                 textDecoration: 'none',
