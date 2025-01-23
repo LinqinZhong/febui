@@ -1,0 +1,387 @@
+{
+  "id": "4817816",
+  "name": "feb-ui",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "40049255",
+      "name": "angry-face",
+      "font_class": "angry-face",
+      "unicode": "ea17",
+      "unicode_decimal": 59927
+    },
+    {
+      "icon_id": "40049256",
+      "name": "confounded-face",
+      "font_class": "confounded-face",
+      "unicode": "ea18",
+      "unicode_decimal": 59928
+    },
+    {
+      "icon_id": "40049257",
+      "name": "astonished-face",
+      "font_class": "astonished-face",
+      "unicode": "ea19",
+      "unicode_decimal": 59929
+    },
+    {
+      "icon_id": "40049258",
+      "name": "distraught-face",
+      "font_class": "distraught-face",
+      "unicode": "ea1a",
+      "unicode_decimal": 59930
+    },
+    {
+      "icon_id": "40049259",
+      "name": "anguished-face",
+      "font_class": "anguished-face",
+      "unicode": "ea1b",
+      "unicode_decimal": 59931
+    },
+    {
+      "icon_id": "40049260",
+      "name": "icon-kfckfc",
+      "font_class": "dizzy-face",
+      "unicode": "ea1c",
+      "unicode_decimal": 59932
+    },
+    {
+      "icon_id": "40049261",
+      "name": "face-without-mouth",
+      "font_class": "face-without-mouth",
+      "unicode": "ea1d",
+      "unicode_decimal": 59933
+    },
+    {
+      "icon_id": "40049262",
+      "name": "expressionless-face",
+      "font_class": "expressionless-face",
+      "unicode": "ea1e",
+      "unicode_decimal": 59934
+    },
+    {
+      "icon_id": "40049263",
+      "name": "grimacing-face",
+      "font_class": "grimacing-face",
+      "unicode": "ea1f",
+      "unicode_decimal": 59935
+    },
+    {
+      "icon_id": "40049264",
+      "name": "emotion-unhappy",
+      "font_class": "emotion-unhappy",
+      "unicode": "ea20",
+      "unicode_decimal": 59936
+    },
+    {
+      "icon_id": "40049265",
+      "name": "confused-face",
+      "font_class": "confused-face",
+      "unicode": "ea21",
+      "unicode_decimal": 59937
+    },
+    {
+      "icon_id": "40049268",
+      "name": "emotion-happy",
+      "font_class": "emotion-happy",
+      "unicode": "ea22",
+      "unicode_decimal": 59938
+    },
+    {
+      "icon_id": "40049269",
+      "name": "frowning-face-whit-open-mouth",
+      "font_class": "frowning-face-whit-open-mouth",
+      "unicode": "ea23",
+      "unicode_decimal": 59939
+    },
+    {
+      "icon_id": "40049270",
+      "name": "face-with-smiling-open-eyes",
+      "font_class": "face-with-smiling-open-eyes",
+      "unicode": "ea24",
+      "unicode_decimal": 59940
+    },
+    {
+      "icon_id": "40049271",
+      "name": "disappointed-face",
+      "font_class": "disappointed-face",
+      "unicode": "ea25",
+      "unicode_decimal": 59941
+    },
+    {
+      "icon_id": "40049273",
+      "name": "grinning-face-with-open-mouth",
+      "font_class": "grinning-face-with-open-mouth",
+      "unicode": "ea26",
+      "unicode_decimal": 59942
+    },
+    {
+      "icon_id": "40049274",
+      "name": "grinning-face-with-tightly-closed-eyes-open-mouth",
+      "font_class": "grinning-face-with-tightly-closed-eyes-open-mouth",
+      "unicode": "ea27",
+      "unicode_decimal": 59943
+    },
+    {
+      "icon_id": "40049275",
+      "name": "grinning-face-with-tightly-closed-eyes",
+      "font_class": "grinning-face-with-tightly-closed-eyes",
+      "unicode": "ea28",
+      "unicode_decimal": 59944
+    },
+    {
+      "icon_id": "40049280",
+      "name": "loudly-crying-face",
+      "font_class": "loudly-crying-face",
+      "unicode": "ea29",
+      "unicode_decimal": 59945
+    },
+    {
+      "icon_id": "40049281",
+      "name": "grinning-face",
+      "font_class": "grinning-face",
+      "unicode": "ea2a",
+      "unicode_decimal": 59946
+    },
+    {
+      "icon_id": "40049282",
+      "name": "grinning-face-with-squinting-eyes",
+      "font_class": "grinning-face-with-squinting-eyes",
+      "unicode": "ea2b",
+      "unicode_decimal": 59947
+    },
+    {
+      "icon_id": "40049286",
+      "name": "slightly-frowning-face-whit-open-mouth",
+      "font_class": "slightly-frowning-face-whit-open-mouth",
+      "unicode": "ea2c",
+      "unicode_decimal": 59948
+    },
+    {
+      "icon_id": "40049287",
+      "name": "pouting-face",
+      "font_class": "pouting-face",
+      "unicode": "ea2d",
+      "unicode_decimal": 59949
+    },
+    {
+      "icon_id": "40049288",
+      "name": "relieved-face",
+      "font_class": "relieved-face",
+      "unicode": "ea2e",
+      "unicode_decimal": 59950
+    },
+    {
+      "icon_id": "40049289",
+      "name": "slightly-smiling-face",
+      "font_class": "slightly-smiling-face",
+      "unicode": "ea2f",
+      "unicode_decimal": 59951
+    },
+    {
+      "icon_id": "40049290",
+      "name": "surprised-face-with-open-mouth",
+      "font_class": "surprised-face-with-open-mouth",
+      "unicode": "ea30",
+      "unicode_decimal": 59952
+    },
+    {
+      "icon_id": "40049291",
+      "name": "surprised-face-with-open-big-mouth",
+      "font_class": "surprised-face-with-open-big-mouth",
+      "unicode": "ea31",
+      "unicode_decimal": 59953
+    },
+    {
+      "icon_id": "40049292",
+      "name": "winking-face",
+      "font_class": "winking-face",
+      "unicode": "ea32",
+      "unicode_decimal": 59954
+    },
+    {
+      "icon_id": "40049293",
+      "name": "loudly-crying-face-whit-open-mouth",
+      "font_class": "loudly-crying-face-whit-open-mouth",
+      "unicode": "ea33",
+      "unicode_decimal": 59955
+    },
+    {
+      "icon_id": "40049294",
+      "name": "smiling-face",
+      "font_class": "smiling-face",
+      "unicode": "ea34",
+      "unicode_decimal": 59956
+    },
+    {
+      "icon_id": "40049295",
+      "name": "neutral-face",
+      "font_class": "neutral-face",
+      "unicode": "ea35",
+      "unicode_decimal": 59957
+    },
+    {
+      "icon_id": "40049297",
+      "name": "worried-face",
+      "font_class": "worried-face",
+      "unicode": "ea36",
+      "unicode_decimal": 59958
+    },
+    {
+      "icon_id": "40049298",
+      "name": "upside-down-face",
+      "font_class": "upside-down-face",
+      "unicode": "ea37",
+      "unicode_decimal": 59959
+    },
+    {
+      "icon_id": "40049299",
+      "name": "winking-face-with-open-eyes",
+      "font_class": "winking-face-with-open-eyes",
+      "unicode": "ea38",
+      "unicode_decimal": 59960
+    },
+    {
+      "icon_id": "40049300",
+      "name": "sly-face-whit-smile",
+      "font_class": "sly-face-whit-smile",
+      "unicode": "ea39",
+      "unicode_decimal": 59961
+    },
+    {
+      "icon_id": "40049301",
+      "name": "smiling-face-with-squinting-eyes",
+      "font_class": "smiling-face-with-squinting-eyes",
+      "unicode": "ea3a",
+      "unicode_decimal": 59962
+    },
+    {
+      "icon_id": "40049302",
+      "name": "weary-face",
+      "font_class": "weary-face",
+      "unicode": "ea3b",
+      "unicode_decimal": 59963
+    },
+    {
+      "icon_id": "40052221",
+      "name": "anguished-face-filled",
+      "font_class": "anguished-face-filled",
+      "unicode": "ea3c",
+      "unicode_decimal": 59964
+    },
+    {
+      "icon_id": "40052222",
+      "name": "angry-face-filled",
+      "font_class": "angry-face-filled",
+      "unicode": "ea3d",
+      "unicode_decimal": 59965
+    },
+    {
+      "icon_id": "40052223",
+      "name": "astonished-face-filled",
+      "font_class": "astonished-face-filled",
+      "unicode": "ea3e",
+      "unicode_decimal": 59966
+    },
+    {
+      "icon_id": "40052224",
+      "name": "confused-face-filled",
+      "font_class": "confused-face-filled",
+      "unicode": "ea3f",
+      "unicode_decimal": 59967
+    },
+    {
+      "icon_id": "40052225",
+      "name": "disappointed-face-filled",
+      "font_class": "disappointed-face-filled",
+      "unicode": "ea40",
+      "unicode_decimal": 59968
+    },
+    {
+      "icon_id": "40052226",
+      "name": "confounded-face-filled",
+      "font_class": "confounded-face-filled",
+      "unicode": "ea41",
+      "unicode_decimal": 59969
+    },
+    {
+      "icon_id": "40052227",
+      "name": "icon-kfckfc",
+      "font_class": "dizzy-face-filled",
+      "unicode": "ea42",
+      "unicode_decimal": 59970
+    },
+    {
+      "icon_id": "40052228",
+      "name": "distraught-face-filled",
+      "font_class": "distraught-face-filled",
+      "unicode": "ea43",
+      "unicode_decimal": 59971
+    },
+    {
+      "icon_id": "40052229",
+      "name": "emotion-unhappy-filled",
+      "font_class": "emotion-unhappy-filled",
+      "unicode": "ea44",
+      "unicode_decimal": 59972
+    },
+    {
+      "icon_id": "40052230",
+      "name": "face-without-mouth-filled",
+      "font_class": "face-without-mouth-filled",
+      "unicode": "ea45",
+      "unicode_decimal": 59973
+    },
+    {
+      "icon_id": "40052231",
+      "name": "face-with-smiling-open-eyes-filled",
+      "font_class": "face-with-smiling-open-eyes-filled",
+      "unicode": "ea46",
+      "unicode_decimal": 59974
+    },
+    {
+      "icon_id": "40052232",
+      "name": "frowning-face-whit-open-mouth-filled",
+      "font_class": "frowning-face-whit-open-mouth-filled",
+      "unicode": "ea47",
+      "unicode_decimal": 59975
+    },
+    {
+      "icon_id": "40052233",
+      "name": "grinning-face-filled",
+      "font_class": "grinning-face-filled",
+      "unicode": "ea48",
+      "unicode_decimal": 59976
+    },
+    {
+      "icon_id": "40052234",
+      "name": "expressionless-face-filled",
+      "font_class": "expressionless-face-filled",
+      "unicode": "ea49",
+      "unicode_decimal": 59977
+    },
+    {
+      "icon_id": "40052235",
+      "name": "grinning-face-with-open-mouth-filled",
+      "font_class": "grinning-face-with-open-mouth-filled",
+      "unicode": "ea4a",
+      "unicode_decimal": 59978
+    },
+    {
+      "icon_id": "40052236",
+      "name": "loudly-crying-face-whit-open-mouth-filled",
+      "font_class": "loudly-crying-face-whit-open-mouth-filled",
+      "unicode": "ea4b",
+      "unicode_decimal": 59979
+    },
+    {
+      "icon_id": "40052237",
+      "name": "grinning-face-with-tightly-closed-eyes-filled",
+      "font_class": "grinning-face-with-tightly-closed-eyes-filled",
+      "unicode": "ea4c",
+      "unicode_decimal": 59980
+    }
+  ]
+}

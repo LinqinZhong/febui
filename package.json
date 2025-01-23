@@ -4,11 +4,12 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "scripts": {
-    "install": "cd dev && npm install",
+    "install": "cd dev && npm install && cd icon npm install",
     "route":"cd dev && npm run route",
     "dev": "cd dev && npm run start",
     "update": "cd dev && npm run route",
-    "snippets": "node ./snippets/index.js"
+    "snippets": "node ./snippets/index.js",
+    "dev-icon": "cd icon && npm run start"
   },
   "keywords": [],
   "author": "",
