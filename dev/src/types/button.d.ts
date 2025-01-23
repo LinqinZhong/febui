@@ -1,9 +1,5 @@
 // 按钮类型
-type ButtonType = 'primary' // 主题色
-  | 'default'  // 默认
-  | 'warn'     // 警告
-  | 'danger'   // 危险
-  | 'safe'     // 安全
+type ButtonType = InteractionType
 // 按钮形态
 type ButtonVariant = 'base' // 填充
   | 'outline'  // 实线边框
