@@ -1,8 +1,11 @@
 import './iconfont.js'
 import React, { Component } from "react";
+import styles from './style.module.css'
+
 type Props = FebProps<{
   name: FIconName
 }>
+
 
 /**
  * 图标
@@ -11,7 +14,8 @@ type Props = FebProps<{
  */
 export class FIcon extends Component<Props> {
   render() {
-    return (<svg className="icon" aria-hidden="true">
+    const className = [styles.icon,this.props.className]
+    return (<svg style={this.props.style} className={className.join(' ')} aria-hidden="true">
       <use xlinkHref={`#icon-${this.props.name}`}></use>
     </svg>)
   }
