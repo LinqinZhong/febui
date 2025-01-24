@@ -1,5 +1,9 @@
 // 提示消息类型
-declare type FToastType = InteractionType
+declare type FToastType = 'info'    // 信息
+    | 'success' // 成功
+    | 'fail' // 失败
+    | 'error' // 错误
+    | 'warn' // 警告
 
 // 提示消息信息
 declare type ToastInfo = {
@@ -16,7 +20,7 @@ declare type ToastInfo = {
 // 提示消息API配置
 declare type ToastApiConfig = {
     // 消息类型
-    type?: FToastType = 'default',
+    type?: FToastType = 'info',
     // 消息时长
     duration?: number = 1500
 }

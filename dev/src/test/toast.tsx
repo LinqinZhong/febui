@@ -18,11 +18,11 @@ export const FToastTest = function () {
     return (
         <>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-                {['default', 'primary', 'danger', 'safe', 'warn'].map(type => (
+                {['info', 'success', 'fail', 'error', 'warn'].map(type => (
                     <FButton
                         variant='dashed'
+                        type="primary"
                         key={type}
-                        type={type as ButtonType}
                         onClick={showToast.bind(null, type as FToastType)}
                     >
                         {type}
@@ -38,12 +38,14 @@ export const QuickTest = function () {
     const handleSuccess = () => toast.success('成功')
     const handleError = () => toast.error('错误')
     const handleWarn = () => toast.warn('警告')
+    const handleFail = () => toast.fail('失败')
     return (
         <>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-                <FButton onClick={handleSuccess}>toast.success</FButton>
-                <FButton onClick={handleError}>toast.error</FButton>
-                <FButton onClick={handleWarn}>toast.warn</FButton>
+                <FButton type="safe" variant="outline" onClick={handleSuccess}>toast.success</FButton>
+                <FButton type="danger" variant="text" onClick={handleError}>toast.error</FButton>
+                <FButton type="danger" variant="outline" onClick={handleFail}>toast.fail</FButton>
+                <FButton type="warn" variant="text" onClick={handleWarn}>toast.warn</FButton>
             </div>
         </>
     )
@@ -57,7 +59,7 @@ export const DurationTest = function () {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
                 {
                     [1000, 2000, 3000, 4000, 5000].map((d => (
-                        <FButton onClick={onClick.bind(null, d)}>{d}ms</FButton>
+                        <FButton onClick={onClick.bind(null, d)} key={d}>{d}ms</FButton>
                     )))
                 }
             </div>

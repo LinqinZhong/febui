@@ -114,15 +114,7 @@ npm install
 
 ##### 2.3 定义组件
 
-- 统一定义为类式组件
-- Component 需指定 Props
-- 例：
-
-  ```tsx
-  export class FComponent extends Component<Props> {
-    // TODO
-  }
-  ```
+- 统一使用函数式组件
 
 ##### 2.4 测试文件
 

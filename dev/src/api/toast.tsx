@@ -69,26 +69,32 @@ export const toast = (message: string, config?: ToastApiConfig) => {
 /**
  * 弹出成功消息
  * @param message - 消息内容
- * @param duration - 时长
  */
-toast.success = (message: string, duration?: number) => {
-    toast(message, { duration, type: 'safe' })
+toast.success = (message: string) => {
+    toast(message, { type: 'success' })
 }
+
+/**
+ * 弹出失败消息
+ * @param message - 消息内容
+ */
+toast.fail = (message: string) => {
+    toast(message, { type: 'fail' })
+}
+
 
 /**
  * 弹出错误消息
  * @param message - 消息内容
- * @param duration - 时长
  */
-toast.error = (message: string, duration?: number) => {
-    toast(message, { duration, type: 'danger' })
+toast.error = (message: string) => {
+    toast(message, { type: 'error' })
 }
 
 /**
  * 弹出警告消息
  * @param message - 消息内容
- * @param duration - 时长
  */
-toast.warn = (message: string, duration?: number) => {
-    toast(message, { duration, type: 'warn' })
+toast.warn = (message: string) => {
+    toast(message, { type: 'warn' })
 }
