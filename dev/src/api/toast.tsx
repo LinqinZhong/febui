@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { enqueue } from '../hooks/useQueue';
+import {  createTaskQueue } from '../utils/queue-util';
 import { FToastWrapper } from '../component/notice/toast/ToastWrapper';
 
 /**
@@ -22,6 +22,11 @@ const DEFAULT_DURATION = 1700
  * 获取消息容器的期约
  */
 let wrapperPromise: Promise<FToastWrapper> | undefined = undefined
+
+/**
+ * 消息队列
+ */
+const queue = createTaskQueue()
 
 /**
  * 弹出消息
@@ -55,7 +60,7 @@ export const toast = (message: string, config?: ToastApiConfig) => {
             message
         })
         // 消息入队，依次移除
-        enqueue('toast', (_duration, next) => {
+        queue.enqueue((_duration, next) => {
             const d = _duration === null ? DEFAULT_DURATION : _duration
             setTimeout(() => {
                 wrapper.remove(id)
