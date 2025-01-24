@@ -1,13 +1,14 @@
 import React, { Component, ElementType } from "react";
 
 import styles from './toast.module.less'
-import { FIconError } from "../../icons/FIconError";
-import { FIconSuccessCircle } from "../../icons/FIconSuccessCircle";
-import { FIconFailCircle } from "../../icons/FIconFailCircle";
+import { FIconSuccessFilled } from "../../icons/FIconSuccessFilled";
+import { FIconFailFilled } from "../../icons/FIconFailFilled";
+import { FIconAttentionFilled } from "../../icons/FIconAttentionFilled";
+import { FIconInfoFilled } from "../../icons/FIconInfoFilled";
 
 type Props = FebProps<{
     // 消息ID
-    id: number,
+    id?: number,
     // 消息类型
     type?: FToastType,
     // 消息是否死亡
@@ -15,7 +16,7 @@ type Props = FebProps<{
     // 消息内容
     message: string,
     // 销毁消息函数
-    destroy?: (id: number) => void
+    destroy?: (id: number | undefined) => void
 }>
 /**
  * 不同类型icon的组件
@@ -23,11 +24,11 @@ type Props = FebProps<{
 const ICON_MAP:{
     [key: string]: ElementType
 } = {
-    'info': FIconError,
-    'fail': FIconFailCircle,
-    'success': FIconSuccessCircle,
-    'warn': FIconError,
-    'error': FIconError
+    'info': FIconInfoFilled,
+    'fail': FIconFailFilled,
+    'success': FIconSuccessFilled,
+    'warn': FIconAttentionFilled,
+    'error': FIconAttentionFilled
 }
 /**
  * 提示消息
@@ -42,7 +43,7 @@ export class FToast extends Component<Props> {
 
     render() {
         const className = [styles.toast]
-        if (this.props.dead) {
+        if (this.props.destroy && this.props.dead) {
             className.push(styles['toast-died'])
         }
 

@@ -50,7 +50,7 @@ export class FToastWrapper extends Component<Props, State> {
      * 销毁容器中的提示消息
      * @param id - 消息ID
      */
-    private destroy = (id: number) => {
+    private destroy = (id: number | undefined) => {
         this.setState({
             list: this.state.list.filter((item) => item.id !== id)
         })

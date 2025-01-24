@@ -11,7 +11,7 @@ import { FLoading } from "../component/base/loading/FLoading"
 export const SpeedTest = function () {
   return (<div style={{ display: 'flex', flexWrap: 'wrap', gap:90 }}>
     {['normal', 'fast', 'slow'].map(speed => (
-      <div style={{textAlign: 'center'}}>
+      <div key={speed} style={{textAlign: 'center'}}>
         <FLoading speed={speed as FLoadingSpeed} />
         <div style={{marginTop: 10}}>{speed}</div>
       </div>
@@ -23,7 +23,7 @@ export const SpeedTest = function () {
 export const DurationTest = function () {
   return (<div style={{ display: 'flex', flexWrap: 'wrap', gap: 30 }}>
     {[500, 1000, 2000, 3000].map(dur => (
-      <div style={{textAlign: 'center'}}>
+      <div key={dur} style={{textAlign: 'center'}}>
         <FLoading duration={dur} />
         <div style={{marginTop: 10}}>{dur}ms/圈</div>
       </div>
@@ -35,7 +35,7 @@ export const DurationTest = function () {
 export const ColorTest = function () {
   return (<div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
     {['red', 'blue', '#00b2ff','yellow','pink'].map(color => (
-      <div style={{textAlign: 'center'}}>
+      <div key={color} style={{textAlign: 'center'}}>
       <FLoading style={{ color }} />
       <div style={{marginTop: 10}}>{color}</div>
     </div>

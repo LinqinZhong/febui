@@ -4,15 +4,63 @@
  * @author linqin.zhong
  * @date 2025/01/23 13:07:12
 */
-import React from "react"
+import React, { useState } from "react"
 import { FButton } from "../component/base/button/FButton"
 import { toast } from "../api/toast"
+import { FToast } from "../component/notice/toast/Toast"
 
-// 不同类型
+// 组件使用
 export const FToastTest = function () {
-    const showToast = (type: FToastType) => {
+    return <>
+        <FToast type="warn" message={"这是一则警告提示"} />
+        <FToast type="error" message={"这是一则错误提示"} />
+        <FToast type="fail" message={"这是一则失败提示"} />
+        <FToast type="success" message={"这是一则成功提示"} />
+    </>
+}
+
+// 关闭和显示
+export const ClostTest = function () {
+
+    let status = 1
+    const [isDead, setIsDead] = useState(false)
+    const [isShow, setIsShow] = useState(true)
+    let toast: FToast | null = null
+    const close = () => {
+        if (status) {
+            setIsDead(true)
+            status = 0
+        } else {
+            setIsDead(false)
+            setIsShow(true)
+            status = 1
+        }
+    }
+    const destory = () => {
+        setIsShow(false)
+    }
+    return (<div style={{ height: 50, position: 'relative' }}>
+        <FButton loading={isDead && isShow} variant="dashed" type={isShow ? 'default' : 'primary'} onClick={close}>
+            {isShow ? '关闭' : '显示'}
+        </FButton>
+        {
+            isShow ? (
+                <div style={{ position: 'absolute', top: 0, left: 120 }}>
+                    <FToast ref={t => {
+                        t = toast
+                    }} message={"点击左边按钮关闭提示"} dead={isDead} destroy={destory} />
+                </div>
+            ) : null
+        }
+    </div>)
+}
+
+// Api调用
+export const ApiTest = function () {
+    const showToast = (type: FToastType, duration?: number) => {
         toast(type, {
-            type
+            type,
+            duration
         })
     }
     return (
@@ -28,12 +76,22 @@ export const FToastTest = function () {
                         {type}
                     </FButton>
                 ))}
+                {[1000, 2000, 3000].map(dur => (
+                    <FButton
+                        variant='dashed'
+                        type="primary"
+                        key={dur}
+                        onClick={showToast.bind(null, 'info', dur)}
+                    >
+                        停留{dur}毫秒
+                    </FButton>
+                ))}
             </div>
         </>
     )
 }
 
-// 快捷调用
+// Api快捷调用
 export const QuickTest = function () {
     const handleSuccess = () => toast.success('成功')
     const handleError = () => toast.error('错误')
@@ -46,22 +104,6 @@ export const QuickTest = function () {
                 <FButton type="danger" variant="text" onClick={handleError}>toast.error</FButton>
                 <FButton type="danger" variant="outline" onClick={handleFail}>toast.fail</FButton>
                 <FButton type="warn" variant="text" onClick={handleWarn}>toast.warn</FButton>
-            </div>
-        </>
-    )
-}
-
-// 自定义时长（慎用）
-export const DurationTest = function () {
-    const onClick = (d: number) => toast(d + 'ms', { duration: d })
-    return (
-        <>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-                {
-                    [1000, 2000, 3000, 4000, 5000].map((d => (
-                        <FButton onClick={onClick.bind(null, d)} key={d}>{d}ms</FButton>
-                    )))
-                }
             </div>
         </>
     )
