@@ -61,7 +61,7 @@ export class FToastWrapper extends Component<Props, State> {
             <div className={types['toast-wrapper']}>
                 {
                     this.state.list.map(
-                        item => <FToast type={item.type} id={item.id!} destroy={this.destroy} key={item.id} died={item.died} message={item.message} />
+                        item => <FToast type={item.type} id={item.id!} destroy={this.destroy} key={item.id} dead={item.died} message={item.message} />
                     )
                 }
             </div>

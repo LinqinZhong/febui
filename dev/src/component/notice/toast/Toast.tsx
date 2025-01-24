@@ -11,7 +11,7 @@ type Props = FebProps<{
     // 消息类型
     type?: FToastType,
     // 消息是否死亡
-    died?: boolean,
+    dead?: boolean,
     // 消息内容
     message: string,
     // 销毁消息函数
@@ -42,7 +42,7 @@ export class FToast extends Component<Props> {
 
     render() {
         const className = [styles.toast]
-        if (this.props.died) {
+        if (this.props.dead) {
             className.push(styles['toast-died'])
         }
 
