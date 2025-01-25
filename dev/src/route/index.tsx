@@ -11,6 +11,7 @@ export const FebRoutes = function () {
             height: '100vh',
             display: 'flex',
             overflow: 'auto',
+            width: '100%',
         }}>
             <div style={
                 {
@@ -21,7 +22,7 @@ export const FebRoutes = function () {
                     background: 'white',
                     boxShadow: '1px 1px 1px #EDEDED',
                     position: 'sticky',
-                    left: 0,
+                    right: 0,
                     top: 0,
                     gap: 10,
                     overflowX: 'hidden',
@@ -40,7 +41,8 @@ export const FebRoutes = function () {
                     )
                 }
             </div>
-            <div style={{ padding: 10, marginLeft: 20 }}>
+            <div style={{ padding: 10, marginLeft: 20,
+                    width: '100%', }}>
                 {useRoutes(routes)}
             </div>
         </div>

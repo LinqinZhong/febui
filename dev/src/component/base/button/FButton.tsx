@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import styles from './style.module.less'
-import { isFunction, isNumber } from '../../../utils/type-util'
+import { isFunction, isNumber } from '../../../utils/type.util'
 import debounce from 'lodash.debounce'
 import throttle from 'lodash.throttle'
-import { isUndefined } from '../../../utils/type-util'
+import { isUndefined } from '../../../utils/type.util'
 import { FLoading } from '../loading/FLoading'
 
 
