@@ -4,7 +4,9 @@ import { classnames } from "../../../utils/class.util"
 
 export type FLayoutAsideProps = FebProps<{
   position?: 'left' | 'right',
-  showDiv?: boolean
+  showDiv?: boolean,
+  sticky?: boolean,
+  width?: number
 }, HTMLDivElement>
 /**
  * 布局组件
@@ -13,12 +15,13 @@ export const FLayoutAside: React.FC<FLayoutAsideProps> = function (
   { position = 'left',
     showDiv,
     style,
-    children
+    children,
+    width = 100
   }
 ) {
   const className = classnames(styles.aside)
-  if (showDiv) {
-    className.add(styles[`show-div-${position}`])
-  }
-  return <div style={style} className={className}>{children}</div>
+  if (showDiv) className.add(styles[`show-div-${position}`])
+  className.add(styles[`aside-${position}`])
+  const _style = { ...style, width }
+  return <div style={_style} className={className}>{children}</div>
 }
