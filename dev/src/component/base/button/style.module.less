@@ -38,9 +38,14 @@
     --h: 2rem;
   }
 
+  /* 矩形*/
+  &.rectangle{
+    border-radius: 0.2rem;
+  }
+
   /* 圆角 */
   &.round {
-    border-radius: 0.4rem;
+    border-radius: var(--h);
   }
 
   /* 圆形 */
@@ -58,6 +63,7 @@
     height: var(--h);
     padding: 0.5rem;
     min-width: unset;
+    border-radius: 0.2rem;
   }
 
   /* 填充态 */

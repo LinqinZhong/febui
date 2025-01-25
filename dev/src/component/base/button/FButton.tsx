@@ -42,7 +42,7 @@ export class FButton extends Component<Props> {
   static defaultProps = {
     variant: 'base',
     type: 'default',
-    shape: 'round',
+    shape: 'rectangle',
     size: 'medium',
     loading: false
   }
