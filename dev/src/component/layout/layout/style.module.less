@@ -36,6 +36,12 @@
       overflow: hidden;
 
 
+      &.aside-wrapper-is-stickying{
+        &:has(.aside-right) {
+          right:9.5px;
+        }
+      }
+
       .aside {
         box-sizing: border-box;
         padding: 10px;
@@ -54,7 +60,7 @@
       }
 
       &:has(.aside-right) {
-        right: 0;
+        right:5px;
       }
     }
 

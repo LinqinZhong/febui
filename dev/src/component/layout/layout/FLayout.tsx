@@ -114,7 +114,7 @@ export const FLayout: React.FC<Props> = function (props) {
       paddingLeft: insideMarginLeft,
       paddingRight: insideMarginRight
     }} className={bodyClass}>
-      <div className={styles['aside-wrapper']} style={asideWrapperStyle}>{aside}</div>
+      <div className={classnames(styles['aside-wrapper'], asidePosition === 'fixed' ? styles['aside-wrapper-is-stickying'] : undefined)} style={asideWrapperStyle}>{aside}</div>
       {inside}
     </div>
   </div>)
