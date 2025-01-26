@@ -1,13 +1,14 @@
 :root {
   font-size: 14px;
+  --feb-scrollbar-width: 6px;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: var(--feb-scrollbar-width);
   height: 5px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-  background-color: var(--text-color-15);
+  background-color: var(--text-color-13);
+  cursor: pointer;
 }
