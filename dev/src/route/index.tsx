@@ -2,18 +2,65 @@ import React, { useState } from 'react'
 // @ts-nocheck
 // @ts-ignore
 import { routes } from './route'
-import { NavLink, useRoutes } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate, useRoutes } from 'react-router-dom'
 import { FLayout } from '../component/layout/layout/FLayout'
 import { FLayoutAside } from '../component/layout/layout/FLayoutAside'
 import { FLayoutContent } from '../component/layout/layout/FLayoutContent'
 import { FLayoutHead } from '../component/layout/layout/FLayoutHead'
 import { FLayoutFooter } from '../component/layout/layout/FLayoutFooter'
 import { FButton } from '../component/base/button/FButton'
+import { FMenu } from '../component/nav/FMenu'
 
 export const FebRoutes = function () {
     let tag = 0
-    const [current, setCurrent] = useState(routes[0].path)
+    const location = useLocation()
+    const nav = useNavigate()
+    const [current, setCurrent] = useState(location.pathname)
     const [asidePosition, setAsidePosition] = useState<"left" | "right">('left')
+    const menus: FMenuItem[] = [
+        {
+            name: 'docs',
+            label: '文档',
+            children: [
+                {
+                    name: 'about',
+                    label: '关于FEB-UI',
+                    disabled: true
+                },
+                {
+                    name: 'dev',
+                    label: '如何开发',
+                    disabled: true
+                }
+            ]
+        }
+    ]
+    const testMenus: FMenuItem[] = []
+    routes.forEach(
+        (route: any) => {
+            testMenus.push({
+                name: route.path,
+                label: route.label
+            })
+        }
+    )
+    menus.push({
+        name: 'test',
+        label: '组件',
+        children: testMenus
+    })
+    menus.push({
+        name: 'tools',
+        label: '工具',
+        children: [
+            {
+                name: 'generate-icon',
+                label: 'Icon生成工具',
+                disabled: true
+            }
+        ]
+    })
+
     return (
         <div id="feb-ui-demo" style={{
             height: '100vh',
@@ -38,7 +85,7 @@ export const FebRoutes = function () {
                         }>{asidePosition === 'left' ? '左' : '右'}</FButton>
                     </div>
                 </FLayoutHead>
-                <FLayoutAside  position={asidePosition} width={200} sticky showDiv style={
+                <FLayoutAside position={asidePosition} width={200} sticky showDiv style={
                     {
                         display: 'flex',
                         flexDirection: 'column',
@@ -47,15 +94,10 @@ export const FebRoutes = function () {
                     }
                 }>
                     {
-                        routes.map(
-                            (route: any) => <NavLink key={route.path} onClick={() => setCurrent(route.path)} style={
-                                {
-                                    width: 'fit-content',
-                                    textDecoration: 'none',
-                                    color: current === route.path ? 'blue' : 'gray'
-                                }
-                            } to={route.path}>{route.label}</NavLink>
-                        )
+                        <FMenu default={current} onChange={(c) => {
+                            setCurrent(c)
+                            nav(c)
+                        }} group items={menus}></FMenu>
                     }
                 </FLayoutAside>
                 <FLayoutContent>
