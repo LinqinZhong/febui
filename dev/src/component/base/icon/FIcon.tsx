@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './style.module.less'
 import { FebIconSymbol } from './init'
+import { classnames } from "../../../utils/class.util";
 type Props = FebProps<{
   name: string,
   path: FIconPath | FIconPath[]
@@ -15,5 +16,7 @@ type Props = FebProps<{
 export const FIcon = function (props: Props) {
   const symbol = new FebIconSymbol(props.name, props.path)
   const className = [styles.icon, props.className]
-  return <svg style={props.style} className={className.join(' ')} aria-hidden="true"><use xlinkHref={`#${symbol.id}`}></use></svg>
+  return <div style={props.style} className={classnames(styles.icon, className.join(' '))}>
+    <svg style={{ width: '100%', height: '100%' }} aria-hidden="true"><use xlinkHref={`#${symbol.id}`}></use></svg>
+  </div>
 }

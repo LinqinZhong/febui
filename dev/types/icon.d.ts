@@ -3,3 +3,4 @@ declare type FIconPath = {
     fill?: string,
     id?: string
 }
+declare type FebIconComponent<P = {}> = React.FC<FebProps<P>>

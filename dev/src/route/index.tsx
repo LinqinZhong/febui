@@ -18,29 +18,31 @@ export const FebRoutes = function () {
         <div id="feb-ui-demo" style={{
             height: '100vh',
             width: '100vw',
-            overflow: 'auto'
+            background: "linear-gradient(to right bottom, var(--text-color-16), var(--text-color-15), var(--text-color-16))",
+            overflowY: 'scroll',
+            overflowX: 'hidden'
         }}>
             <FLayout style={{
                 height: '100%',
                 width: '100%',
             }}>
-                <FLayoutHead height={50} showDiv style={{ justifyContent: 'space-between' }}>
+                <FLayoutHead height={50} showDiv style={{ background: 'var(--text-color-16)', justifyContent: 'space-between' }}>
                     <div>FEB-UI组件库 - 开发调试工具</div>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
                         <span>侧边栏位置</span>
                         <FButton size='small' shape='circle' type='primary' variant="dashed" onClick={
                             () => {
-                                tag = Math.abs(tag-1)
+                                tag = Math.abs(tag - 1)
                                 setAsidePosition(tag === 0 ? 'left' : 'right')
                             }
                         }>{asidePosition === 'left' ? '左' : '右'}</FButton>
                     </div>
                 </FLayoutHead>
-                <FLayoutAside position={asidePosition} width={200} sticky showDiv style={
+                <FLayoutAside  position={asidePosition} width={200} sticky showDiv style={
                     {
                         display: 'flex',
                         flexDirection: 'column',
-                        background: 'white',
+                        background: 'var(--text-color-16)',
                         lineHeight: 2
                     }
                 }>

@@ -1,7 +1,7 @@
-export const classnames = function (...v: (string | undefined)[]) {
+export const classnames = function (...v: (string | undefined | false)[]) {
   const buffer: string[] = []
   const classnames = {
-    add(...v: (string | undefined)[]) {
+    add(...v: (string | undefined | false)[]) {
       v.forEach((c) => {
         if (!!c) buffer.push(c)
       })
