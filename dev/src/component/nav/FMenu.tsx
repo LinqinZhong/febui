@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import types from './style.module.less'
+import styles from './style.module.less'
 import { classnames } from "../../utils/class.util";
 import { FIconNext } from "../icons/FIconNext";
 type Props = FebProps<{
@@ -50,19 +50,19 @@ export const FMenu: React.FC<Props> = function (props) {
       const disabled = item.disabled || item.children && item.children.length === 0
       return (<div className={
         classnames(
-          types['menu-item'],
+          styles['menu-item'],
           // 是否有孩子
-          item.children && types['has-children'],
+          item.children && styles['has-children'],
           // 是否禁用
           disabled
             // 禁用时选择禁用样式
-            ? types['menu-item-empty-children']
+            ? styles['menu-item-empty-children']
             // 无禁用时，判断是否为展开项
             : openItems1.includes(item.name) && !props.collapsed
               // 展开时选择展开样式
-              ? types['menu-item-open']
+              ? styles['menu-item-open']
               // 无展开时，判断该项或其孩子是否为激活项，是则选择激活样式
-              : activeItem.includes(item.name) && types['menu-item-active']
+              : activeItem.includes(item.name) && styles['menu-item-active']
         )
       }
         key={item.name}>
@@ -73,16 +73,16 @@ export const FMenu: React.FC<Props> = function (props) {
             ? setOpen.bind(null, openItems1, setOpenItems1, item.name)
             // 无孩子点击后激活该项
             : setActive.bind(null, [item.name])
-        } className={types['menu-item-head']}>
-          <div className={types['menu-item-label']}>
-            {getIcon(item, types['menu-item-icon'])}
+        } className={styles['menu-item-head']}>
+          <div className={styles['menu-item-label']}>
+            {getIcon(item, styles['menu-item-icon'])}
             <span>{item.label}</span>
           </div>
-          {item.children && <FIconNext className={types['menu-item-next']}></FIconNext>}
+          {item.children && <FIconNext className={styles['menu-item-next']}></FIconNext>}
         </div>
 
         {/* 二级菜单 */}
-        <div className={types['second-menu']}>
+        <div className={styles['second-menu']}>
           {
             item.children && item.children.map((c) => {
               // 设置默认活跃项
@@ -94,19 +94,19 @@ export const FMenu: React.FC<Props> = function (props) {
               const disabled = c.disabled || c.children && c.children.length === 0
               return (
                 <div className={classnames(
-                  types['second-item'],
+                  styles['second-item'],
                   // 是否有孩子
-                  c.children && types['has-children'],
+                  c.children && styles['has-children'],
                   // 是否禁用
                   disabled
                     // 禁用时选择禁用样式
-                    ? types['second-item-empty-children']
+                    ? styles['second-item-empty-children']
                     // 无禁用时，判断是否为展开项
                     : openItems2.includes(c.name) && !props.collapsed
                       // 展开时选择展开样式
-                      ? types['second-item-open']
+                      ? styles['second-item-open']
                       // 无展开时，判断该项或其孩子是否为激活项，是则选择激活样式
-                      : activeItem.includes(c.name) && types['second-item-active']
+                      : activeItem.includes(c.name) && styles['second-item-active']
 
                 )} key={c.name}>
                   <div onClick={
@@ -116,16 +116,16 @@ export const FMenu: React.FC<Props> = function (props) {
                       ? setOpen.bind(null, openItems2, setOpenItems2, c.name)
                       // 无孩子点击后激活该项
                       : setActive.bind(null, [item.name, c.name])
-                  } className={types['second-item-head']}>
-                    <div className={types['second-item-label']}>
-                      {getIcon(c, types['second-item-icon'])}
+                  } className={styles['second-item-head']}>
+                    <div className={styles['second-item-label']}>
+                      {getIcon(c, styles['second-item-icon'])}
                       <span>{c.label}</span>
                     </div>
-                    {c.children && <FIconNext className={types['second-item-next']}></FIconNext>}
+                    {c.children && <FIconNext className={styles['second-item-next']}></FIconNext>}
                   </div>
 
                   {/* 三级菜单 */}
-                  <div className={types['third-menu']}>
+                  <div className={styles['third-menu']}>
                     {
                       c.children && c.children.map((cc) => {
                         // 菜单是否禁用（设置了disabled）
@@ -138,13 +138,13 @@ export const FMenu: React.FC<Props> = function (props) {
                         }
                         return (<div className={
                           classnames(
-                            types['third-item'],
-                            disabled && types['third-item-disabled'],
-                            activeItem.includes(cc.name) && types['is-active']
+                            styles['third-item'],
+                            disabled && styles['third-item-disabled'],
+                            activeItem.includes(cc.name) && styles['is-active']
                           )} key={cc.name}>
                           <div
                             onClick={setActive.bind(null, [item.name, c.name, cc.name])}
-                            className={types['third-item-head']}
+                            className={styles['third-item-head']}
                           >
                             {cc.label}
                           </div>
@@ -163,16 +163,16 @@ export const FMenu: React.FC<Props> = function (props) {
   return (
     /* 一级菜单 */
     <div style={props.style} className={classnames(
-      types.menu,
-      props.collapsed && types['menu-collapsed'],
+      styles.menu,
+      props.collapsed && styles['menu-collapsed'],
       props.className
     )}>
       {
         // 按【是否显示分组】进行不同方案渲染
         props.group
           // 渲染分组后再渲染菜单项
-          ? props.items.map((group) => (<div className={types['menu-group']} key={group.name}>
-            <div className={types['menu-group-label']} >{group.label}</div>
+          ? props.items.map((group) => (<div className={styles['menu-group']} key={group.name}>
+            <div className={styles['menu-group-label']} >{group.label}</div>
             {group.children && parseItems(group.children)}
           </div>))
           // 只渲染菜单项

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './style.module.less'
-import { isFunction, isNumber } from '../../../utils/type.util'
+import { isNumber } from '../../../utils/type.util'
 import debounce from 'lodash.debounce'
 import throttle from 'lodash.throttle'
 import { isUndefined } from '../../../utils/type.util'
@@ -18,13 +18,11 @@ type Props = FebProps<{
   // 大小
   size?: ButtonSize
   // 防抖
-  debounce?: number | debounceFn
+  debounce?: number
   // 节流
-  throttle?: number | ThrottleFn
+  throttle?: number
   // 加载中
   loading?: boolean
-  // 点击事件
-  onClick?: ActionFn
 }>
 
 /**
@@ -37,7 +35,7 @@ type Props = FebProps<{
  */
 export class FButton extends Component<Props> {
 
-  private onClick?: ActionFn
+  private onClick?: OnClickFn
 
   static defaultProps = {
     variant: 'base',
@@ -59,21 +57,15 @@ export class FButton extends Component<Props> {
       // 不能同时使用节流和防抖，默认采用防抖
       console.warn('Not allowed use `debounce` and `throttle` at the same time, ignoring throttle.');
     }
-    if (isFunction(this.props.debounce)) {
-      // 用户自定义防抖函数
-      this.onClick = this.props.debounce as debounceFn
-    } else if (isNumber(this.props.debounce)) {
+    if (isNumber(this.props.debounce)) {
       // 创建防抖函数
-      this.onClick = debounce(() => {
-        if (this.props.onClick) this.props.onClick()
+      this.onClick = debounce((e) => {
+        if (this.props.onClick) this.props.onClick(e)
       }, Math.max(0, this.props.debounce as number))
-    } else if (isFunction(this.props.throttle)) {
-      // 用户自定义节流函数
-      this.onClick = this.props.throttle as ThrottleFn
     } else if (isNumber(this.props.throttle)) {
       // 创建节流函数
-      this.onClick = throttle(() => {
-        if (this.props.onClick) this.props.onClick()
+      this.onClick = throttle((e) => {
+        if (this.props.onClick) this.props.onClick(e)
       }, Math.max(0, this.props.throttle as number))
     } else {
       // 不做防抖和节流
@@ -81,7 +73,7 @@ export class FButton extends Component<Props> {
     }
   }
   render() {
-    const loading = this.props.loading ? <FLoading  className={styles.loading} /> : null
+    const loading = this.props.loading ? <FLoading className={styles.loading} /> : null
     const className = [
       styles.button,
       styles[this.props.variant as string],
@@ -89,11 +81,12 @@ export class FButton extends Component<Props> {
       styles[this.props.shape as string],
       styles[this.props.size as string],
     ]
-    if(loading) className.push(styles.loading)
-    const handleClick = () => {
+    if (loading) className.push(styles.loading)
+    const handleClick = (e: React.SyntheticEvent) => {
+      e.stopPropagation()
       if (this.props.loading) return
       if (this.onClick) {
-        this.onClick()
+        this.onClick(e)
       }
     }
     return (

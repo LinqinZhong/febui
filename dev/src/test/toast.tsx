@@ -7,7 +7,7 @@
 import React, { useState } from "react"
 import { FButton } from "../component/base/button/FButton"
 import { toast } from "../api/toast"
-import { FToast } from "../component/notice/toast/Toast"
+import { FToast } from "../component/notice/toast/FToast"
 
 // 组件使用
 export const FToastTest = function () {
@@ -71,7 +71,7 @@ export const ApiTest = function () {
                         variant='dashed'
                         type="primary"
                         key={type}
-                        onClick={showToast.bind(null, type as FToastType)}
+                        onClick={() => showToast.bind(null, type as FToastType)}
                     >
                         {type}
                     </FButton>

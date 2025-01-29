@@ -16,7 +16,7 @@ type Props = FebProps<{
 export const FIcon = function (props: Props) {
   const symbol = new FebIconSymbol(props.name, props.path)
   const className = [styles.icon, props.className]
-  return <div style={props.style} className={classnames(styles.icon, className.join(' '))}>
+  return <div onClick={props.onClick} style={props.style} className={classnames(styles.icon, className.join(' '))}>
     <svg style={{ width: '100%', height: '100%' }} aria-hidden="true"><use xlinkHref={`#${symbol.id}`}></use></svg>
   </div>
 }

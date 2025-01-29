@@ -33,33 +33,31 @@ export const FebRoutes = function () {
                     disabled: true
                 }
             ]
+        },
+        {
+            name: 'test',
+            label: '组件',
+            children: routes.map(
+                (route: any) => {
+                    return {
+                        name: route.path,
+                        label: route.label
+                    }
+                }
+            )
+        },
+        {
+            name: 'tools',
+            label: '工具',
+            children: [
+                {
+                    name: 'generate-icon',
+                    label: 'Icon生成工具',
+                    disabled: true
+                }
+            ]
         }
     ]
-    const testMenus: FMenuItem[] = []
-    routes.forEach(
-        (route: any) => {
-            testMenus.push({
-                name: route.path,
-                label: route.label
-            })
-        }
-    )
-    menus.push({
-        name: 'test',
-        label: '组件',
-        children: testMenus
-    })
-    menus.push({
-        name: 'tools',
-        label: '工具',
-        children: [
-            {
-                name: 'generate-icon',
-                label: 'Icon生成工具',
-                disabled: true
-            }
-        ]
-    })
 
     return (
         <div id="feb-ui-demo" style={{
