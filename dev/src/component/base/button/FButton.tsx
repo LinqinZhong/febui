@@ -82,7 +82,7 @@ export class FButton extends Component<Props> {
       styles[this.props.size as string],
     ]
     if (loading) className.push(styles.loading)
-    const handleClick = (e: React.SyntheticEvent) => {
+    const handleClick = (e: React.SyntheticEvent) => {  
       e.stopPropagation()
       if (this.props.loading) return
       if (this.onClick) {

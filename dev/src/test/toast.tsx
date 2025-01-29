@@ -57,7 +57,7 @@ export const ClostTest = function () {
 
 // Api调用
 export const ApiTest = function () {
-    const showToast = (type: FToastType, duration?: number) => {
+    const showToast = (type: FToastType, duration?: number) => {        
         toast(type, {
             type,
             duration
@@ -71,7 +71,9 @@ export const ApiTest = function () {
                         variant='dashed'
                         type="primary"
                         key={type}
-                        onClick={() => showToast.bind(null, type as FToastType)}
+                        onClick={() => {
+                            showToast(type as FToastType)
+                        }}
                     >
                         {type}
                     </FButton>
