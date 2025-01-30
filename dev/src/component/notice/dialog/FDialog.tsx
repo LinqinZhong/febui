@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from './style.module.less'
 import { classnames } from "../../../utils/class.util";
-import { FIconFailFilled } from "../../icons/FIconFailFilled";
 import { FButton } from "../../base/button/FButton";
+import { FIconClose } from "../../icons/FIconClose";
 type Props = FebProps<{
   onClickModal?: () => void,
   onClose?: () => void,
@@ -51,10 +51,10 @@ export const FDialog: React.FC<Props> = function (
           header || <>
             <div className={styles['title']}>{title}</div>
             {
-              onClose && <FIconFailFilled onClick={(e) => {
+              onClose && <FIconClose onClick={(e) => {
                 e.stopPropagation()
                 onClose && onClose()
-              }} className={styles['close-icon']}></FIconFailFilled>
+              }} className={styles['close-icon']}/>
             }
           </>
         }
