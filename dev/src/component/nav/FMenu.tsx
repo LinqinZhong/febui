@@ -67,12 +67,16 @@ export const FMenu: React.FC<Props> = function (props) {
       }
         key={item.name}>
         <div onClick={
-          // 判断是否有孩子
-          item.children
-            // 有孩子时点击后展开该项子菜单
-            ? setOpen.bind(null, openItems1, setOpenItems1, item.name)
-            // 无孩子点击后激活该项
-            : setActive.bind(null, [item.name])
+          // 判断是否禁用
+          item.disabled || (item.children && item.children.length === 0)
+            // 禁用
+            ? undefined
+            // 判断是否有孩子
+            : item.children
+              // 有孩子时点击后展开该项子菜单
+              ? setOpen.bind(null, openItems1, setOpenItems1, item.name)
+              // 无孩子点击后激活该项
+              : setActive.bind(null, [item.name])
         } className={styles['menu-item-head']}>
           <div className={styles['menu-item-label']}>
             {getIcon(item, styles['menu-item-icon'])}
@@ -110,12 +114,16 @@ export const FMenu: React.FC<Props> = function (props) {
 
                 )} key={c.name}>
                   <div onClick={
-                    // 判断是否有孩子
-                    c.children
-                      // 有孩子时点击后展开该项子菜单
-                      ? setOpen.bind(null, openItems2, setOpenItems2, c.name)
-                      // 无孩子点击后激活该项
-                      : setActive.bind(null, [item.name, c.name])
+                    // 判断是否禁用
+                    c.disabled || (c.children && c.children.length === 0)
+                      // 禁用
+                      ? undefined
+                      // 判断是否有孩子
+                      : c.children
+                        // 有孩子时点击后展开该项子菜单
+                        ? setOpen.bind(null, openItems2, setOpenItems2, c.name)
+                        // 无孩子点击后激活该项
+                        : setActive.bind(null, [item.name, c.name])
                   } className={styles['second-item-head']}>
                     <div className={styles['second-item-label']}>
                       {getIcon(c, styles['second-item-icon'])}
@@ -143,7 +151,14 @@ export const FMenu: React.FC<Props> = function (props) {
                             activeItem.includes(cc.name) && styles['is-active']
                           )} key={cc.name}>
                           <div
-                            onClick={setActive.bind(null, [item.name, c.name, cc.name])}
+                            onClick={
+                              // 判断是否禁用
+                              cc.disabled
+                                // 禁用
+                                ? undefined
+                                // 激活
+                                : setActive.bind(null, [item.name, c.name, cc.name])
+                            }
                             className={styles['third-item-head']}
                           >
                             {cc.label}
