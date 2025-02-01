@@ -29,22 +29,43 @@
     position: relative;
 
     .aside-wrapper {
+      position: absolute;
       display: flex;
-      height: 100%;
       flex-shrink: 0;
       top: 0;
+      height: 100vh;
       overflow: hidden;
 
 
-      &.aside-wrapper-is-stickying{
+      &.aside-wrapper-is-stickying {
         &:has(.aside-right) {
           right: var(--feb-scrollbar-width);
         }
+
+        padding-bottom: 40px;
       }
 
       .aside {
+        overflow-x: hidden;
+        overflow-y: auto;
         box-sizing: border-box;
         padding: 10px;
+
+        ::-webkit-scrollbar {
+          display: none;
+        }
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &:hover {
+          ::-webkit-scrollbar {
+            display: unset;
+          }
+
+          scrollbar-width: unset;
+          -ms-overflow-style: unset;
+        }
 
         &.show-div-right {
           border-left: 2px solid var(--text-color-15);
@@ -60,7 +81,7 @@
       }
 
       &:has(.aside-right) {
-        right:0;
+        right: 0;
       }
     }
 
