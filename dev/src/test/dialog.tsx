@@ -111,10 +111,10 @@ export const FooterTest = function () {
       }
       visible={visible}>
       <div style={{ lineHeight: 2 }}>
-        <div>A） ++i</div>
+        <div>A） ++i;</div>
         <div>B） a=b=34</div>
         <div>C） a=3,b=9</div>
-        <div>D） k=int( a+b )</div>
+        <div>D） k=int(a+b);</div>
       </div>
     </FDialog>
   </div>)
