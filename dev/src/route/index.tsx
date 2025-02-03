@@ -85,6 +85,7 @@ export const FebRoutes = function () {
                 </FLayoutHead>
                 <FLayoutAside position={asidePosition} width={200} sticky showDiv style={
                     {
+                        height: '100vh',
                         display: 'flex',
                         flexDirection: 'column',
                         background: 'var(--text-color-16)',
