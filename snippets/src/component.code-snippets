@@ -4,7 +4,7 @@
 		"prefix": "dc",
 		"body": [
 			"import React from \"react\";",
-			"import {classnames} from \"../../../utils/class.util\"",
+			"import {classnames} from \"@/utils/class.util\"",
 			"import styles from \"./style.module.less\"",
 			"type Props = FebProps<{${3}}>",
 			"/**",

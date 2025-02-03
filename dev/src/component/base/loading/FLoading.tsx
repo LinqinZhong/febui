@@ -1,6 +1,6 @@
 import React from "react";
 import { Component, ReactNode } from "react";
-import { generateId } from "../../../utils/id.util";
+import { generateId } from "@/utils/id.util";
 type Props = FebProps<{
   duration?: number  // 转一圈的时长（ms，设置这个值会导致speed失效）
   speed?: FLoadingSpeed // 旋转的速度（默认：normal）

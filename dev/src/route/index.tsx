@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 // @ts-nocheck
 // @ts-ignore
 import { routes } from './route'
-import { NavLink, useLocation, useNavigate, useRoutes } from 'react-router-dom'
-import { FLayout } from '../component/layout/layout/FLayout'
-import { FLayoutAside } from '../component/layout/layout/FLayoutAside'
-import { FLayoutContent } from '../component/layout/layout/FLayoutContent'
-import { FLayoutHead } from '../component/layout/layout/FLayoutHead'
-import { FLayoutFooter } from '../component/layout/layout/FLayoutFooter'
-import { FButton } from '../component/base/button/FButton'
-import { FMenu } from '../component/nav/FMenu'
+import { useLocation, useNavigate, useRoutes } from 'react-router-dom'
+import { FLayout } from '#/layout/layout/FLayout'
+import { FLayoutAside } from '#/layout/layout/FLayoutAside'
+import { FLayoutContent } from '#/layout/layout/FLayoutContent'
+import { FLayoutHead } from '#/layout/layout/FLayoutHead'
+import { FLayoutFooter } from '#/layout/layout/FLayoutFooter'
+import { FButton } from '#/base/button/FButton'
+import { FMenu } from '#/nav/FMenu'
 
 export const FebRoutes = function () {
     let tag = 0

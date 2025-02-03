@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styles from './style.module.less'
-import { isNumber } from '../../../utils/type.util'
+import { isNumber } from '@/utils/type.util'
 import debounce from 'lodash.debounce'
 import throttle from 'lodash.throttle'
-import { isUndefined } from '../../../utils/type.util'
-import { FLoading } from '../loading/FLoading'
+import { isUndefined } from '@/utils/type.util'
+import { FLoading } from '#/base/loading/FLoading'
 
 
 // 组件属性

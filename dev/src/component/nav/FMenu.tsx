@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from './style.module.less'
-import { classnames } from "../../utils/class.util";
-import { FIconNext } from "../icons/FIconNext";
+import { classnames } from "@/utils/class.util";
+import { FIconNext } from "+/FIconNext";
 type Props = FebProps<{
   items: FMenuItem[],
   group?: boolean,
@@ -47,7 +47,7 @@ export const FMenu: React.FC<Props> = function (props) {
       // 设置默认活跃项
       if (item.name === props.default && !item.children && activeItem.length === 0) setActiveItem([item.name])
       // 菜单是否禁用（设置了disabled 或 有孩子容器但孩子为空）
-      const disabled = item.disabled || item.children && item.children.length === 0
+      const disabled = item.disabled || (item.children && item.children.length === 0)
       return (<div className={
         classnames(
           styles['menu-item'],
@@ -95,7 +95,7 @@ export const FMenu: React.FC<Props> = function (props) {
                 setOpenItems1([item.name])
               }
               // 菜单是否禁用（设置了disabled 或 有孩子容器但孩子为空）
-              const disabled = c.disabled || c.children && c.children.length === 0
+              const disabled = c.disabled || (c.children && c.children.length === 0)
               return (
                 <div className={classnames(
                   styles['second-item'],

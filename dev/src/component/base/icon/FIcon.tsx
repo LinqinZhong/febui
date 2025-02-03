@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './style.module.less'
 import { FebIconSymbol } from './init'
-import { classnames } from "../../../utils/class.util";
+import { classnames } from "@/utils/class.util";
 type Props = FebProps<{
   name: string,
   path: FIconPath | FIconPath[]

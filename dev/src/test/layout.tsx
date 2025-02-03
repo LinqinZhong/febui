@@ -4,12 +4,12 @@
  * @author linqin.zhong
  * @date 2025/01/25 15:29:49
 */
-import React, { useState } from "react"
-import { FLayout } from "../component/layout/layout/FLayout"
-import { FLayoutHead } from "../component/layout/layout/FLayoutHead"
-import { FLayoutAside } from "../component/layout/layout/FLayoutAside"
-import { FLayoutContent } from "../component/layout/layout/FLayoutContent"
-import { FLayoutFooter } from "../component/layout/layout/FLayoutFooter"
+import React from "react"
+import { FLayout } from "#/layout/layout/FLayout"
+import { FLayoutHead } from "#/layout/layout/FLayoutHead"
+import { FLayoutAside } from "#/layout/layout/FLayoutAside"
+import { FLayoutContent } from "#/layout/layout/FLayoutContent"
+import { FLayoutFooter } from "#/layout/layout/FLayoutFooter"
 
 
 // 默认

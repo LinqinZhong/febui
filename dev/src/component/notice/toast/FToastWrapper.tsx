@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FToast } from "./FToast";
 import types from './toast.module.less'
-import { generateId } from "../../../utils/id.util";
+import { generateId } from "@/utils/id.util";
 type Props = FebProps<{}>
 type State = { list: ToastInfo[] }
 /**

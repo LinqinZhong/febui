@@ -5,9 +5,9 @@
  * @date 2025/01/29 14:31:23
 */
 import React, { useState } from "react"
-import { FDialog } from "../component/notice/dialog/FDialog"
-import { FButton } from "../component/base/button/FButton"
-import { toast } from "../api/toast"
+import { FDialog } from "#/notice/dialog/FDialog"
+import { FButton } from "#/base/button/FButton"
+import { toast } from "@/api/toast"
 
 // 基础使用
 export const FDialogTest = function () {

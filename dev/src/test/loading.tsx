@@ -5,7 +5,7 @@
  */
 
 import React from "react"
-import { FLoading } from "../component/base/loading/FLoading"
+import { FLoading } from "#/base/loading/FLoading"
 
 // 不同速度
 export const SpeedTest = function () {

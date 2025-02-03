@@ -1,6 +1,6 @@
 
 import React from "react"
-import { FIcon } from "../base/icon/FIcon"
+import { FIcon } from "#/base/icon/FIcon"
 
 type Props = FebProps
 export const FIconSuccessFilled = (props: Props) => {

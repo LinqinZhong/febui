@@ -5,9 +5,9 @@
  * @date 2025/01/23 13:07:12
 */
 import React, { useState } from "react"
-import { FButton } from "../component/base/button/FButton"
-import { toast } from "../api/toast"
-import { FToast } from "../component/notice/toast/FToast"
+import { FButton } from "#/base/button/FButton"
+import { toast } from "@/api/toast"
+import { FToast } from "#/notice/toast/FToast"
 
 // 组件使用
 export const FToastTest = function () {

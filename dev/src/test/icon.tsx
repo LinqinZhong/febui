@@ -5,8 +5,8 @@
  * @date 2025/01/24 10:39:02
 */
 import React from "react"
-import { FIconBack } from "../component/icons/FIconBack"
-import { FIconNext } from "../component/icons/FIconNext"
+import { FIconBack } from "#/icons/FIconBack"
+import { FIconNext } from "#/icons/FIconNext"
 // 图标
 export const IconTest = function () {
     return (<>

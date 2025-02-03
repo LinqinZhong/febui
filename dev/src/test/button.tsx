@@ -5,7 +5,7 @@
  */
 
 import React, { useState } from "react"
-import { FButton } from "../component/base/button/FButton"
+import { FButton } from "#/base/button/FButton"
 
 // 不同形状
 export const ShapeTest = function () {
