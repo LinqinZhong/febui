@@ -1,0 +1,1 @@
+type beforeChangeFn = () => Promise<boolean>;
