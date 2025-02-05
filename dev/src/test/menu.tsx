@@ -5,17 +5,17 @@
  * @date 2025/01/27 14:19:34
 */
 import React, { useState } from "react"
-import { FMenu } from "../component/nav/FMenu"
-import { FIconDeleteFour } from "../component/icons/FIconDeleteFour"
-import { FIconUser } from "../component/icons/FIconUser"
-import { FIconBankCard } from "../component/icons/FIconBankCard"
-import { FIconSafety } from "../component/icons/FIconSafety"
-import { FIconSettingOne } from "../component/icons/FIconSettingOne"
-import { FIconSystem } from "../component/icons/FIconSystem"
-import { FIconDataSheet } from "../component/icons/FIconDataSheet"
-import { FIconData } from "../component/icons/FIconData"
-import { FIconChartLine } from "../component/icons/FIconChartLine"
-import { FButton } from "../component/base/button/FButton"
+import { FMenu } from "#/nav/FMenu"
+import { FIconDeleteFour } from "#/icons/FIconDeleteFour"
+import { FIconUser } from "#/icons/FIconUser"
+import { FIconBankCard } from "#/icons/FIconBankCard"
+import { FIconSafety } from "#/icons/FIconSafety"
+import { FIconSettingOne } from "#/icons/FIconSettingOne"
+import { FIconSystem } from "#/icons/FIconSystem"
+import { FIconDataSheet } from "#/icons/FIconDataSheet"
+import { FIconData } from "#/icons/FIconData"
+import { FIconChartLine } from "#/icons/FIconChartLine"
+import { FButton } from "#/base/button/FButton"
 // 基础使用
 export const FMenuTest = function () {
   const [current, setCurrent] = useState('pork')

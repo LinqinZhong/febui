@@ -1,10 +1,10 @@
 import React, { Component, ElementType } from "react";
 
 import styles from './toast.module.less'
-import { FIconSuccessFilled } from "../../icons/FIconSuccessFilled";
-import { FIconFailFilled } from "../../icons/FIconFailFilled";
-import { FIconAttentionFilled } from "../../icons/FIconAttentionFilled";
-import { FIconInfoFilled } from "../../icons/FIconInfoFilled";
+import { FIconSuccessFilled } from "+/FIconSuccessFilled";
+import { FIconFailFilled } from "+/FIconFailFilled";
+import { FIconAttentionFilled } from "+/FIconAttentionFilled";
+import { FIconInfoFilled } from "+/FIconInfoFilled";
 
 type Props = FebProps<{
     // 消息ID

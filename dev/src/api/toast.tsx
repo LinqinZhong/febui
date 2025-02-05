@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {  createTaskQueue } from '../utils/queue.util';
-import { FToastWrapper } from '../component/notice/toast/FToastWrapper';
+import { FToastWrapper } from '#/notice/toast/FToastWrapper';
 
 /**
  * @description 提示消息API

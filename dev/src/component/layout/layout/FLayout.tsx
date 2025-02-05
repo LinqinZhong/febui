@@ -1,7 +1,7 @@
-import React, { ReactElement, ReactNode, use, useState } from 'react'
+import React, { ReactElement, useState } from 'react'
 import { FLayoutAside, FLayoutAsideProps } from './FLayoutAside'
 import { FLayoutHead, FLayoutHeadProps } from './FLayoutHead'
-import { classnames } from '../../../utils/class.util'
+import { classnames } from '@/utils/class.util'
 import styles from './style.module.less'
 import { FLayoutContent } from './FLayoutContent'
 import { FLayoutFooter } from './FLayoutFooter'
@@ -22,7 +22,7 @@ type Props = FebProps<{
  */
 export const FLayout: React.FC<Props> = function (props) {
   const {
-    direction = 'horizontal',
+    // direction = 'horizontal',
     gap
   } = props
   const style = { ...props.style }

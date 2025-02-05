@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 import styles from './style.module.less'
-import { classnames } from "../../../utils/class.util";
-import { FButton } from "../../base/button/FButton";
-import { FIconClose } from "../../icons/FIconClose";
+import { classnames } from "@/utils/class.util";
+import { FButton } from '#/base/button/FButton';
+import { FIconClose } from "+/FIconClose";
 type Props = FebProps<{
   onClickModal?: () => void,
   onClose?: () => void,
@@ -54,7 +54,7 @@ export const FDialog: React.FC<Props> = function (
               onClose && <FIconClose onClick={(e) => {
                 e.stopPropagation()
                 onClose && onClose()
-              }} className={styles['close-icon']}/>
+              }} className={styles['close-icon']} />
             }
           </>
         }
@@ -65,20 +65,23 @@ export const FDialog: React.FC<Props> = function (
         }
       </div>
       {
-        footer || (onCancel || onConfirm) && <div className={classnames(styles['footer'])}>
-          {
-            onCancel && <FButton onClick={(e) => {
-              e.stopPropagation()
-              onCancel && onCancel()
-            }} variant="outline" type="default">取消</FButton>
-          }
-          {
-            onConfirm && <FButton onClick={(e) => {
-              e.stopPropagation()
-              onConfirm && onConfirm()
-            }} type="primary">确定</FButton>
-          }
-        </div>
+        footer
+        || (onCancel && onConfirm &&
+          <div className={classnames(styles['footer'])}>
+            {
+              onCancel && <FButton onClick={(e) => {
+                e.stopPropagation()
+                onCancel && onCancel()
+              }} variant="outline" type="default">取消</FButton>
+            }
+            {
+              onConfirm && <FButton onClick={(e) => {
+                e.stopPropagation()
+                onConfirm && onConfirm()
+              }} type="primary">确定</FButton>
+            }
+          </div>
+        )
       }
     </div>
   </div>

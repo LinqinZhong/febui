@@ -11,5 +11,17 @@
       "node_modules/@types",
       "./types"
     ],
+    "baseUrl": "./",
+    "paths": {
+      "+/*": [
+        "src/component/icons/*"
+      ],
+      "#/*": [
+        "src/component/*"
+      ],
+      "@/*":[
+        "src/*"
+      ]
+    },
   }
 }

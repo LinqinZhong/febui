@@ -1,5 +1,5 @@
 import React from "react";
-import { classnames } from "../../../utils/class.util"
+import { classnames } from "@/utils/class.util"
 import styles from "./style.module.less"
 type Props = FebProps<{
     // 进度值（0~100）
@@ -21,11 +21,11 @@ type Props = FebProps<{
 export const FProgress: React.FC<Props> = function (props) {
 
     const value = Math.min(100, Math.max(0, props.value || 0))
-    return (<div className={classnames(styles['progress-wrapper'])}>
-        <div
-            style={{
-                '--height': (props.strokeWidth || 0.5) + 'rem'
-            } as any}
+    return (<div className={classnames(
+        styles['progress-wrapper'])}>
+        <div style={{
+            '--height': (props.strokeWidth || 0.5) + 'rem'
+        } as any}
             className={classnames(styles['progress-bar'])}>
             <div style={{ width: value + '%' }} className={
                 classnames(

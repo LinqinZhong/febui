@@ -5,8 +5,8 @@
  * @date 2025/02/01 16:17:53
 */
 import React, { useState } from "react"
-import { FProgress } from "../component/display/progress/FProgress"
-import { FButton } from "../component/base/button/FButton"
+import { FProgress } from "#/display/progress/FProgress"
+import { FButton } from "#/base/button/FButton"
 
 // 默认使用
 export const FProgressTest = function () {

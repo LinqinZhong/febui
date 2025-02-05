@@ -1,6 +1,6 @@
 import React from "react"
 import styles from './style.module.less'
-import { classnames } from "../../../utils/class.util"
+import { classnames } from "@/utils/class.util"
 
 export type FLayoutContentProps = FebProps<{
   direction?: 'vertical' | 'horizontal',
