@@ -5,7 +5,7 @@
  * @date 2025/01/27 14:19:34
 */
 import React, { useState } from "react"
-import { FMenu } from "#/nav/FMenu"
+import { FMenu } from "#/nav/menu/FMenu"
 import { FIconDeleteFour } from "#/icons/FIconDeleteFour"
 import { FIconUser } from "#/icons/FIconUser"
 import { FIconBankCard } from "#/icons/FIconBankCard"
