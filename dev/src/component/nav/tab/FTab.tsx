@@ -68,6 +68,7 @@ export const FTab: React.FC<Props> = function (props) {
                     if (showNavPrev || showNavNext) {
                         scroll = el
                         el.addEventListener('wheel', (e) => {
+                            e.preventDefault()
                             el.scrollTo({
                                 left: el.scrollLeft + e.deltaY / 8000 * e.timeStamp
                             })
@@ -87,7 +88,11 @@ export const FTab: React.FC<Props> = function (props) {
                                     setUnderlineLeft(el.offsetLeft)
                                     setUnderlineWidth((el.clientWidth))
                                 }
-                            }} className={classnames(styles['tab-item'], props.value === option.value && styles['is-active'])} onClick={() => {
+                            }} className={classnames(styles['tab-item'], props.value === option.value && styles['is-active'])} onClick={(e) => {
+                                (e.target as HTMLDivElement).scrollIntoView({
+                                    behavior: 'smooth',
+                                    inline: 'center'
+                                })
                                 props.onChange && props.onChange(option.value)
                             }}>
                                 <span>{option.label}</span>
