@@ -1,1 +1,3 @@
-type beforeChangeFn = () => Promise<boolean>;
+type BeforeChangeFn = () => Promise<boolean>;
+
+type SwitchValue = boolean | string | number;

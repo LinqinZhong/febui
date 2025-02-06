@@ -76,21 +76,21 @@ export const TextTest = function () {
  */
 // 扩展的value类型
 export const ValueTest = function () {
-  const [value1, setValue1] = useState(true)
-  const [value2, setValue2] = useState(100)
-  const [value3, setValue3] = useState('Yes')
+  const [value1, setValue1] = useState<SwitchValue>(true)
+  const [value2, setValue2] = useState<SwitchValue>(100)
+  const [value3, setValue3] = useState<SwitchValue>('Yes')
 
   return (
 
     <div>
       <div>
-        <span>value1:{value1.toString()}</span>&nbsp;&nbsp;&nbsp;<FSwitch onChange={(value) => setValue1(value as boolean)} size='medium' value={value1} ></FSwitch>
+        <span>value1:{value1.toString()}</span>&nbsp;&nbsp;&nbsp;<FSwitch onChange={(value) => setValue1(value)} size='medium' value={value1} ></FSwitch>
       </div>
       <div>
-        <span>value2:{value2}</span>&nbsp;&nbsp;&nbsp;<FSwitch onChange={(value) => setValue2(value as number)} size='medium' value={value2} activeValue={100} inactiveValue={999}></FSwitch>
+        <span>value2:{value2}</span>&nbsp;&nbsp;&nbsp;<FSwitch onChange={(value) => setValue2(value)} size='medium' value={value2} activeValue={100} inactiveValue={999}></FSwitch>
       </div>
       <div>
-        <span>value3:{value3}</span>&nbsp;&nbsp;&nbsp;<FSwitch onChange={(value) => setValue3(value as string)} size='small' value={value3} activeText='Yes' inactiveText='No' activeValue='Yes' inactiveValue='No'></FSwitch>
+        <span>value3:{value3}</span>&nbsp;&nbsp;&nbsp;<FSwitch onChange={(value) => setValue3(value)} size='small' value={value3} activeText='Yes' inactiveText='No' activeValue='Yes' inactiveValue='No'></FSwitch>
       </div>
     </div>
   )
@@ -107,21 +107,21 @@ export const DisabledTest = function () {
 
 // 阻止切换-(待完善)
 export const BeforeChangeTest = function () {
-  const [value1, setValue1] = useState(true)
+  const [value1, setValue1] = useState<SwitchValue>(true)
 
   return (
     <div>
-      <FSwitch onChange={(value) => setValue1(value as boolean)} value={value1} beforeChange={false}></FSwitch>
-      <FSwitch onChange={(value) => setValue1(value as boolean)} value={value1} beforeChange={() => Promise.reject()}></FSwitch>
-      <FSwitch onChange={(value) => setValue1(value as boolean)} value={value1} beforeChange={() => Promise.resolve(true)}></FSwitch>
-      <FSwitch onChange={(value) => setValue1(value as boolean)} value={value1} beforeChange={() => Promise.resolve(false)}></FSwitch>
+      <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={false}></FSwitch>
+      <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={() => Promise.reject()}></FSwitch>
+      <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={() => Promise.resolve(true)}></FSwitch>
+      <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={() => Promise.resolve(false)}></FSwitch>
     </div>
   )
 }
 
 // 加载状态
 export const LoadingTest = function () {
-  const [value1, setValue1] = useState(true)
+  const [value1, setValue1] = useState<SwitchValue>(true)
   const [loading, setLoading] = useState(false)
 
   return (
@@ -129,7 +129,7 @@ export const LoadingTest = function () {
       <FSwitch onChange={(value) => {
         setLoading(true)
         setTimeout(() => {
-          setValue1(value as boolean)
+          setValue1(value)
           setLoading(false)
         }, 3000)
       }} value={value1} beforeChange={false} loading={loading}></FSwitch>
