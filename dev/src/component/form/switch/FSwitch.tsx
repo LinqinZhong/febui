@@ -48,11 +48,7 @@ export default class FSwitch extends Component<Props> {
             flag = await this.props.beforeChange()
           }
         }
-        if (this.state.isActive) {
-          console.log("v:", this.props.inactiveValue);
-        } else {
-          console.log("v:", this.props.activeValue);
-        }
+
         flag && (this.state.isActive ? this.props.onChange(this.props.inactiveValue!, { e }) : this.props.onChange(this.props.activeValue!, { e }))
       } catch (e) {
         console.log(e);
