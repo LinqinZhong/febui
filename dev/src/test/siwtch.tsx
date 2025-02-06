@@ -57,7 +57,7 @@ export const TextTest = function () {
 
   setTimeout(() => {
     setValue(false)
-    console.log("定时器change：", value);
+    // console.log("定时器change：", value);
 
   }, 3000)
   return (
@@ -129,6 +129,8 @@ export const LoadingTest = function () {
       <FSwitch onChange={(value) => {
         setLoading(true)
         setTimeout(() => {
+          console.log("123:", value);
+
           setValue1(value)
           setLoading(false)
         }, 3000)
