@@ -1,2 +1,3 @@
-import './style/color.less'
-import './style/size.less'
+import "./style/color.less";
+import "./style/size.less";
+import "./style/var.less";
