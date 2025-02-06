@@ -7,7 +7,7 @@
     .nav {
         position: absolute;
         width: 2rem;
-        height: 2.15rem;
+        height: 3rem;
         z-index: 100;
         display: flex;
         align-items: center;
@@ -32,12 +32,7 @@
             box-shadow: -.1rem 0 .5rem var(--text-color-13);
         }
     }
-
-    &:has(.nav) {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-
+    
     .scroll {
         overflow: auto;
 
@@ -61,10 +56,11 @@
                 min-width: 3rem;
                 padding: .5rem 1rem .65rem 1rem;
                 cursor: pointer;
-                height: 2.15rem;
+                height: 3rem;
                 box-sizing: border-box;
                 flex-wrap: nowrap;
                 text-wrap: nowrap;
+                color: var(--text-color-9);
 
                 span {
                     overflow: hidden;
@@ -72,7 +68,7 @@
                 }
 
                 &:hover {
-                    background: var(--primary-color-16);
+                    background: var(--text-color-15);
                 }
 
                 &.is-active {
@@ -84,7 +80,8 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                height: .15rem;
+                height: .25rem;
+                border-radius: .1rem;
                 background: var(--primary-color-8);
             }
         }

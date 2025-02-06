@@ -18,7 +18,8 @@ type Props = FebProps<{
 export const FTab: React.FC<Props> = function (props) {
     const [underlineWidth, setUnderlineWidth] = useState(0)
     const [underlineLeft, setUnderlineLeft] = useState(0)
-    const [showNav, setShowNav] = useState(false)
+    const [showNavPrev, setShowNavPrev] = useState(false)
+    const [showNavNext, setShowNavNext] = useState(false)
     let ref: HTMLDivElement | null = null
     let scroll: HTMLDivElement | null = null
     let allWidth = 0
@@ -35,28 +36,36 @@ export const FTab: React.FC<Props> = function (props) {
         )
     }
 
+    // 更新
+    const update = (t: HTMLDivElement) => {
+        setShowNavPrev(t.scrollLeft > 0)
+        setShowNavNext(t.clientWidth <= allWidth - t.scrollLeft)
+    }
+
     // 大小变化监听器
     const observer = new ResizeObserver(debounce((e) => {
-        if (e[0].target.clientWidth < allWidth && !showNav) {
-            setShowNav(true)
-        } else if (e[0].target.clientWidth >= allWidth && showNav) {
-            setShowNav(false)
-        }
-    }, 10))
+        const t = e[0].target
+        update(t)
+    }, 50))
 
     // 组件渲染完成后再开启过渡动画
     setTimeout(() => ref && (ref.style.transition = '0.2s'), 0);
 
     return (
         <div className={classnames(styles['tabs-wrapper'])}>
-            {showNav && <>
-                <FIconBack onClick={handleScroll.bind(null, -100)} className={classnames(styles['nav'], styles['pre'])} />
-                <FIconNext onClick={handleScroll.bind(null, 100)} className={classnames(styles['nav'], styles['next'])} />
-            </>}
+            {
+                showNavPrev && <FIconBack onClick={handleScroll.bind(null, -10)} className={classnames(styles['nav'], styles['pre'])} />
+            }
+            {
+                showNavNext && <FIconNext onClick={handleScroll.bind(null, 10)} className={classnames(styles['nav'], styles['next'])} />
+            }
             <div ref={(el) => {
                 if (el) {
                     observer.observe(el)
-                    if (showNav) {
+                    el.addEventListener('scroll', () => {
+                        update(el)
+                    })
+                    if (showNavPrev || showNavNext) {
                         scroll = el
                         el.addEventListener('wheel', (e) => {
                             el.scrollTo({
@@ -78,7 +87,7 @@ export const FTab: React.FC<Props> = function (props) {
                                     setUnderlineLeft(el.offsetLeft)
                                     setUnderlineWidth((el.clientWidth))
                                 }
-                            }} className={classnames(styles['tab-item'],props.value === option.value && styles['is-active'])} onClick={() => {
+                            }} className={classnames(styles['tab-item'], props.value === option.value && styles['is-active'])} onClick={() => {
                                 props.onChange && props.onChange(option.value)
                             }}>
                                 <span>{option.label}</span>
