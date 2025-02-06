@@ -55,7 +55,7 @@ export class FToast extends Component<Props> {
         return (
             <div ref={t => {
                 // 销毁动画结束后，销毁当前Toast元素
-                t?.addEventListener('transitionend', (e) => {
+                if(this.props.dead) t?.addEventListener('transitionend', (e) => {
                     if (e.propertyName === 'margin-top' && this.props.destroy)
                         this.props.destroy(this.props.id)
                 })
