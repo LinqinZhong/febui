@@ -111,9 +111,13 @@ export const BeforeChangeTest = function () {
 
   return (
     <div>
+      <h5>直接传false</h5>
       <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={false}></FSwitch>
+      <h5>期约被拒绝</h5>
       <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={() => Promise.reject()}></FSwitch>
+      <h5>期约返回值为true</h5>
       <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={() => Promise.resolve(true)}></FSwitch>
+      <h5>期约返回值为false</h5>
       <FSwitch onChange={(value) => setValue1(value)} value={value1} beforeChange={() => Promise.resolve(false)}></FSwitch>
     </div>
   )
@@ -129,12 +133,10 @@ export const LoadingTest = function () {
       <FSwitch onChange={(value) => {
         setLoading(true)
         setTimeout(() => {
-          console.log("123:", value);
-
           setValue1(value)
           setLoading(false)
         }, 3000)
-      }} value={value1} beforeChange={false} loading={loading}></FSwitch>
+      }} value={value1} loading={loading}></FSwitch>
 
     </div>
   )
