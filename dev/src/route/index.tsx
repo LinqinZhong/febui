@@ -9,7 +9,7 @@ import { FLayoutContent } from '#/layout/layout/FLayoutContent'
 import { FLayoutHead } from '#/layout/layout/FLayoutHead'
 import { FLayoutFooter } from '#/layout/layout/FLayoutFooter'
 import { FButton } from '#/base/button/FButton'
-import { FMenu } from '#/nav/FMenu'
+import { FMenu } from '#/nav/menu/FMenu'
 
 export const FebRoutes = function () {
     let tag = 0
