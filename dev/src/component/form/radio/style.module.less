@@ -1,0 +1,70 @@
+@import '../../../theme/canon/style/mixin.less';;
+.radio{
+
+    --color:var(--info-color-6);
+    --o:0;
+
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &.disabled{
+        .disabled();
+        --color:var(--info-color-6);
+    }
+
+    &__form{
+        position: absolute;
+        opacity: 0;
+    }
+
+    &__input{
+
+        position: relative;
+        display: inline-block;
+        width: 1.1429rem;
+        height: 1.1429rem;
+        border: 1px solid var(--color);
+        border-radius: 50%;
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            margin-top: -8px;
+            margin-left: -8px;
+            transform: scale(0.5);
+            border-radius: 50%;
+            background-color: var(--color);
+            opacity: var(--o);
+        }
+
+        &.disabled:not(.active){
+            background-color: var(--info-color-4);
+        }
+
+        
+
+    }
+
+    &:not(.disabled):not(.active):hover &__input{
+        border-color: var(--primary-color-8);
+    }
+
+    &__label{
+        margin-left: .5714rem;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    &.active:not(.disabled){
+        --color:var(--primary-color-8);
+    }
+    &.active{
+        --o:1;
+    }
+}
