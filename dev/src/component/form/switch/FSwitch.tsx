@@ -71,6 +71,10 @@ export default class FSwitch extends Component<Props> {
     }
   }
 
+  componentDidMount(): void {
+    this.changeActiveStatus(this.props.value)
+  }
+
   render() {
 
     const { isActive } = this.state
