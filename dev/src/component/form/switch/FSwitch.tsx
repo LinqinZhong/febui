@@ -9,7 +9,7 @@ import { FLoading } from '#/base/loading/FLoading'
 type Props = FebProps<{
   value: SwitchValue
   disabled?: boolean
-  size?: ButtonSize
+  size?: Size
   width?: number
   height?: number
   activeText?: string
