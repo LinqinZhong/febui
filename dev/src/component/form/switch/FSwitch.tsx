@@ -7,7 +7,7 @@ import { FLoading } from '#/base/loading/FLoading'
 
 // 组件属性
 type Props = FebProps<{
-  value: boolean | string | number
+  value: SwitchValue
   disabled?: boolean
   size?: ButtonSize
   width?: number
@@ -15,12 +15,12 @@ type Props = FebProps<{
   activeText?: string
   inactiveText?: string
   inline?: boolean
-  activeValue?: boolean | string | number
-  inactiveValue?: boolean | string | number
+  activeValue?: SwitchValue
+  inactiveValue?: SwitchValue
   loading?: boolean
 
   onChange?: (v: boolean | string | number, context: { e: React.SyntheticEvent }) => void
-  beforeChange?: boolean | beforeChangeFn,
+  beforeChange?: boolean | BeforeChangeFn,
 }>
 
 export default class FSwitch extends Component<Props> {
@@ -48,7 +48,8 @@ export default class FSwitch extends Component<Props> {
             flag = await this.props.beforeChange()
           }
         }
-        flag && this.state.isActive ? this.props.onChange(this.props.inactiveValue!, { e }) : this.props.onChange(this.props.activeValue!, { e })
+
+        flag && (this.state.isActive ? this.props.onChange(this.props.inactiveValue!, { e }) : this.props.onChange(this.props.activeValue!, { e }))
       } catch (e) {
         console.log(e);
       }
@@ -68,6 +69,10 @@ export default class FSwitch extends Component<Props> {
     if (prevProps.value !== this.props.value) {
       this.changeActiveStatus(this.props.value)
     }
+  }
+
+  componentDidMount(): void {
+    this.changeActiveStatus(this.props.value)
   }
 
   render() {
