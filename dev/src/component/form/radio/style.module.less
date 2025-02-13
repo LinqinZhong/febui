@@ -1,70 +1,117 @@
 @import '../../../theme/canon/style/mixin.less';;
-.radio{
+.radio-container{
+    --outline-inactive:var(--info-color-4);
+    --outline-active:var(--primary-color-8);
+    --filled-color-inactive:var(--text-color-16);
+    --filled-color-active:var(--primary-color-8);
+    --text-color-outline-inactive:var(--text-color-4);
+    --text-color-outline-active:var(--primary-color-8);
+    --text-color-outline-inactive:var(--text-color-4);
+    --text-color-filled-active:var(--text-color-16);
+    display: inline-block;
+    .radio{
 
-    --color:var(--info-color-6);
-    --o:0;
-
-    display: inline-flex;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-
-    &.disabled{
-        .disabled();
         --color:var(--info-color-6);
+        --o:0;
+    
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    
+        &.disabled{
+            .disabled();
+            --color:var(--info-color-6);
+        }
+    
+        &__input{
+    
+            position: relative;
+            display: inline-block;
+            width: 1.1429rem;
+            height: 1.1429rem;
+            border: 1px solid var(--color);
+            border-radius: 50%;
+    
+            &::after{
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 16px;
+                height: 16px;
+                margin-top: -8px;
+                margin-left: -8px;
+                transform: scale(0.5);
+                border-radius: 50%;
+                background-color: var(--color);
+                opacity: var(--o);
+            }
+    
+            &.disabled:not(.active){
+                background-color: var(--info-color-4);
+            }
+    
+            
+    
+        }
+    
+        &:not(.disabled):not(.active):hover &__input{
+            border-color: var(--primary-color-8);
+        }
+    
+        &__label{
+            margin-left: .5714rem;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+    
+        &.active:not(.disabled){
+            --color:var(--primary-color-8);
+        }
+        &.active{
+            --o:1;
+        }
     }
-
-    &__form{
+    
+    .radio__form{
         position: absolute;
         opacity: 0;
     }
-
-    &__input{
-
-        position: relative;
-        display: inline-block;
-        width: 1.1429rem;
-        height: 1.1429rem;
-        border: 1px solid var(--color);
-        border-radius: 50%;
-
-        &::after{
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 16px;
-            height: 16px;
-            margin-top: -8px;
-            margin-left: -8px;
-            transform: scale(0.5);
-            border-radius: 50%;
-            background-color: var(--color);
-            opacity: var(--o);
+    
+    .radio-button{
+    
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: .3571rem .7143rem;
+        border-radius: .1429rem;
+        cursor: pointer;
+        color: var(--text-color-outline-inactive);
+    
+        &.active{
+            --outline:var(--primary-color-8);
         }
-
-        &.disabled:not(.active){
-            background-color: var(--info-color-4);
+        &.dashed{
+            border: .0714rem solid var(--outline-inactive);
         }
-
-        
-
+        &.dashed.active{
+            color: var(--text-color-outline-active);
+            border: .0714rem solid var(--outline-active);
+        }
+    
+        &.filled{
+            background-color: var(--filled-color-inactive);
+            color:var(--text-color-filled-inactive);
+        }
+        &.filled.active{
+            background-color: var(--filled-color-active);
+            color: var(--text-color-filled-active);
+        }
+        &.disabled{
+            .disabled();
+        }
+    
     }
-
-    &:not(.disabled):not(.active):hover &__input{
-        border-color: var(--primary-color-8);
-    }
-
-    &__label{
-        margin-left: .5714rem;
-        vertical-align: middle;
-        white-space: nowrap;
-    }
-
-    &.active:not(.disabled){
-        --color:var(--primary-color-8);
-    }
-    &.active{
-        --o:1;
-    }
+    
 }

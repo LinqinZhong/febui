@@ -10,7 +10,7 @@ import FSwitch from '#/form/switch/FSwitch'
 // 基础单选框
 export const BaseTest = function () {
     return (
-        <div style={{ width: '800px', height: '30px', backgroundColor: '#fff', padding: '10px' }}>
+        <div style={{ display: "flex", width: '800px', height: '30px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
             <FRadio checked={false}>未选中</FRadio> &nbsp;&nbsp;
             <FRadio allowUncheck>取消选中</FRadio> &nbsp;&nbsp;
             <FRadio checked>已选中</FRadio> &nbsp;&nbsp;
@@ -58,4 +58,18 @@ export const ConfigTest = function () {
         </div>
 
     )
+}
+
+// 按钮单选框
+export const ButtonTest = function () {
+    const filledColor = { '--filled-color-inactive': "#13ce66" }
+    return <div style={{ display: "flex", width: '800px', height: '40px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
+        <FRadio type='button'>线框样式</FRadio> &nbsp;&nbsp;
+        <FRadio type='button' variant='filled' style={filledColor}>填充样式</FRadio> &nbsp;&nbsp;
+        <FRadio type='button' variant='filled'>填充样式</FRadio> &nbsp;&nbsp;
+        <FRadio type='button' disabled>线框+禁用</FRadio> &nbsp;&nbsp;
+        <FRadio type='button' variant='filled' disabled>填充+禁用</FRadio> &nbsp;&nbsp;
+        <FRadio type='button' checked disabled>线框+禁用+选中</FRadio> &nbsp;&nbsp;
+        <FRadio type='button' variant='filled' disabled checked>填充+禁用+未选中</FRadio> &nbsp;&nbsp;
+    </div>
 }

@@ -9,6 +9,8 @@ type Props = FebProps<{
     disabled?: boolean
     name?: string
     readonly?: boolean
+    type?: 'radio' | 'button'
+    variant?: 'filled' | 'dashed'
 
     onChange?: (value: RadioValue, context: {
         e: React.SyntheticEvent
@@ -17,12 +19,12 @@ type Props = FebProps<{
 
 /**
  * Radio单选框
- * @author linqin.zhong
+ * @author xiaotong.wen
  * @date 2025/02/07 11:25:53
  */
 const FRadio: React.FC<Props> = function (props) {
 
-    const { value, checked, allowUncheck = true, disabled = false, readonly = false, onChange, children } = props
+    const { style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children } = props
 
     const [active, setActive] = useState(false)
 
@@ -33,6 +35,13 @@ const FRadio: React.FC<Props> = function (props) {
     ]
     const radioClass = [
         styles['radio'],
+        active && styles['active'],
+        disabled && styles['disabled']
+    ]
+    const radioButton = [
+        styles['radio-button'],
+        variant === 'filled' && styles['filled'],
+        variant === 'dashed' && styles['dashed'],
         active && styles['active'],
         disabled && styles['disabled']
     ]
@@ -59,10 +68,18 @@ const FRadio: React.FC<Props> = function (props) {
     }
 
 
-    return (<div className={classnames(...radioClass)}>
+    return (<div style={style ? style : {}} className={classnames(styles['radio-container'])}>
         <input type="radio" className={classnames(styles['radio__form'])} />
-        <span onClick={(e) => handleClick(e)} className={classnames(...inputClass)}></span>
-        <span className={classnames(styles['radio__label'])}>{children}</span>
+        {type === 'radio' ? (
+            <div className={classnames(...radioClass)} >
+                <span onClick={(e) => handleClick(e)} className={classnames(...inputClass)}></span>
+                <span className={classnames(styles['radio__label'])}>{children}</span>
+            </div>
+        ) : (
+            <div className={classnames(...radioButton)} onClick={(e) => handleClick(e)}>
+                <span>{children}</span>
+            </div>
+        )}
     </div>)
 }
 
