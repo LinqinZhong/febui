@@ -68,7 +68,7 @@ const FRadio: React.FC<Props> = function (props) {
     }
 
 
-    return (<div style={style ? style : {}} className={classnames(styles['radio-container'])}>
+    return (<div style={{ display: "inline-block" }}>
         <input type="radio" className={classnames(styles['radio__form'])} />
         {type === 'radio' ? (
             <div className={classnames(...radioClass)} >
@@ -76,7 +76,7 @@ const FRadio: React.FC<Props> = function (props) {
                 <span className={classnames(styles['radio__label'])}>{children}</span>
             </div>
         ) : (
-            <div className={classnames(...radioButton)} onClick={(e) => handleClick(e)}>
+            <div style={style ? style : {}} className={classnames(...radioButton)} onClick={(e) => handleClick(e)}>
                 <span>{children}</span>
             </div>
         )}
