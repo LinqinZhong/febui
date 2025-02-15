@@ -12,6 +12,7 @@ export type FRadioProps = FebProps<{
     readonly?: boolean
     type?: 'radio' | 'button'
     variant?: 'filled' | 'dashed'
+    size?: Size
 
     onChange?: (value: RadioValue, context: {
         e: React.SyntheticEvent
@@ -29,7 +30,7 @@ interface Attr {
  */
 const FRadio: React.FC<FRadioProps> & Attr = function (props) {
 
-    const { style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children, className } = props
+    const { size = 'medium', style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children, className } = props
 
     const [active, setActive] = useState(false)
 
@@ -48,7 +49,8 @@ const FRadio: React.FC<FRadioProps> & Attr = function (props) {
         variant === 'filled' && styles['filled'],
         variant === 'dashed' && styles['dashed'],
         active && styles['active'],
-        disabled && styles['disabled']
+        disabled && styles['disabled'],
+        styles[size ? size : 'medium' as string],
     ]
 
     React.useEffect(() => {
@@ -74,7 +76,7 @@ const FRadio: React.FC<FRadioProps> & Attr = function (props) {
 
 
     return (<div style={{ display: "inline-block" }} className={className}>
-        <input type="radio" className={classnames(styles['radio__form'])} />
+        <input type="radio" className={classnames(styles['radio__form'])} value={typeof value === 'boolean' ? value.toString() : value} />
         {type === 'radio' ? (
             <div className={classnames(...radioClass)} >
                 <span onClick={(e) => handleClick(e)} className={classnames(...inputClass)}></span>

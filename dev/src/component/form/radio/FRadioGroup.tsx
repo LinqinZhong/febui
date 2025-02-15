@@ -15,7 +15,7 @@ interface FRadioGroupProps extends Omit<FRadioProps, 'variant'> {
 }
 
 const FRadioGroup: React.FC<FRadioGroupProps> = function (props) {
-    const { options, size, value, type = 'radio', variant = 'dashed' } = props
+    const { options, size = 'medium', value, type = 'radio', variant = 'dashed' } = props
     const children: { props: any }[] | undefined = props.children
 
     const containerClass = [
@@ -36,9 +36,9 @@ const FRadioGroup: React.FC<FRadioGroupProps> = function (props) {
         <div className={classnames(...containerClass)}>
             {type === 'radio' && options && options.map((item) => <FRadio {...item} onChange={(value, { e }) => handleChange(e, value)} key={item.value} checked={value === item.value} >{item.label}</FRadio>)}
             {type === 'radio' && children && children.map(({ props }) => <FRadio {...props} onChange={(value, { e }) => handleChange(e, value)} key={props.value} checked={value === props.value}>{props.children}</FRadio>)}
-            {type === 'button' && variant === 'dashed' && options && options.map((item) => <FRadio className={classnames(value === item.value && styles['active'])} {...item} type="button" variant="dashed" key={item.value} onChange={(value, { e }) => handleChange(e, value)} checked={value === item.value} style={{ borderRadius: 0 }}>{item.label}</FRadio>)}
-            {type === 'button' && variant === 'primary-filled' && options && options.map((item) => <FRadio style={{ '--filled-color-inactive': '#eee' }} className={classnames(value === item.value && styles['active'])} {...item} type="button" variant="filled" key={item.value} onChange={(value, { e }) => handleChange(e, value)} checked={value === item.value} >{item.label}</FRadio>)}
-            {type === 'button' && variant === 'default-filled' && options && options.map((item) => <FRadio style={{ '--filled-color-inactive': '#eee', '--filled-color-active': '#fff', '--text-color-filled-active': '#333' }} className={classnames(value === item.value && styles['active'])} {...item} type="button" variant="filled" key={item.value} onChange={(value, { e }) => handleChange(e, value)} checked={value === item.value} >{item.label}</FRadio>)}
+            {type === 'button' && variant === 'dashed' && options && options.map((item) => <FRadio className={classnames(value === item.value && styles['active'])} {...item} type="button" variant="dashed" key={item.value} onChange={(value, { e }) => handleChange(e, value)} checked={value === item.value} style={{ borderRadius: 0 }} size={size}>{item.label}</FRadio>)}
+            {type === 'button' && variant === 'primary-filled' && options && options.map((item) => <FRadio style={{ '--filled-color-inactive': '#eee' }} className={classnames(value === item.value && styles['active'])} {...item} type="button" variant="filled" key={item.value} onChange={(value, { e }) => handleChange(e, value)} checked={value === item.value} size={size}>{item.label}</FRadio>)}
+            {type === 'button' && variant === 'default-filled' && options && options.map((item) => <FRadio style={{ '--filled-color-inactive': '#eee', '--filled-color-active': '#fff', '--text-color-filled-active': '#333' }} className={classnames(value === item.value && styles['active'])} {...item} type="button" variant="filled" key={item.value} onChange={(value, { e }) => handleChange(e, value)} checked={value === item.value} size={size}>{item.label}</FRadio>)}
         </div>
     )
 }

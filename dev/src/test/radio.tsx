@@ -63,7 +63,7 @@ export const ConfigTest = function () {
 // 按钮单选框
 export const ButtonTest = function () {
     const filledColor = { '--filled-color-inactive': "#13ce66" }
-    return <div style={{ display: "flex", width: '800px', height: '40px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
+    return <div style={{ display: "flex", width: '800px', height: '60px', backgroundColor: '#fff', padding: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
         <FRadio type='button'>线框样式</FRadio> &nbsp;&nbsp;
         <FRadio type='button' variant='filled' style={filledColor}>填充样式</FRadio> &nbsp;&nbsp;
         <FRadio type='button' variant='filled'>填充样式</FRadio> &nbsp;&nbsp;
@@ -82,7 +82,7 @@ export const GroupTest = function () {
     const options2 = [{ label: '选项1', value: 1 }, { label: '选项2', value: 2 }, { label: '选项3', value: 3, disabled: true }, { label: '选项4', value: 4 }]
     const [value3, setValue3] = useState<RadioValue>(1)
 
-    return <div style={{ width: '800px', height: '400px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
+    return <div style={{ width: '800px', height: '220px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
         <FRadio.Group options={options1} value={value2} onChange={(value) => setValue2(value)} /> <br />
 
         <FRadio.Group value={value2} onChange={(value) => setValue2(value)}>
@@ -95,5 +95,20 @@ export const GroupTest = function () {
         <FRadio.Group options={options1} type='button' value={value2} onChange={(value) => setValue2(value)} /> <br />
         <FRadio.Group options={options2} type='button' variant='primary-filled' value={value3} onChange={(value) => setValue3(value)} /> <br />
         <FRadio.Group options={options2} type='button' variant='default-filled' value={value3} onChange={(value) => setValue3(value)} /> <br />
+    </div>
+}
+
+// 尺寸
+export const SizeTest = function () {
+    const options1 = [{ label: '选项1', value: 1, disabled: true }, { label: '选项2', value: 2 }, { label: '选项3', value: 3 }, { label: '选项4', value: 4 }]
+    const [value2, setValue2] = useState<RadioValue>(1)
+
+    const options2 = [{ label: '选项1', value: 1 }, { label: '选项2', value: 2 }, { label: '选项3', value: 3, disabled: true }, { label: '选项4', value: 4 }]
+    const [value3, setValue3] = useState<RadioValue>(1)
+
+    return <div style={{ width: '800px', height: '130px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
+        <FRadio.Group options={options1} type='button' value={value2} onChange={(value) => setValue2(value)} size='small' /> <br />
+        <FRadio.Group options={options2} type='button' variant='primary-filled' value={value3} onChange={(value) => setValue3(value)} size='medium' /> <br />
+        <FRadio.Group options={options2} type='button' variant='default-filled' value={value3} onChange={(value) => setValue3(value)} size='large' /> <br />
     </div>
 }

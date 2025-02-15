@@ -84,7 +84,7 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: .3571rem .7143rem;
+        padding: var(--v) var(--h);
         border-radius: .1429rem;
         cursor: pointer;
         color: var(--text-color-outline-inactive);
@@ -110,6 +110,21 @@
         }
         &.disabled{
             .disabled();
+        }
+
+        &.medium {
+            --v: .2857rem;
+            --h: 1.1429rem;
+        }
+        
+        &.large {
+            --v: .5714rem;
+            --h: 1.7143rem;
+        }
+        
+        &.small {
+            --v: 0;
+            --h: .5714rem;
         }
     
     }
