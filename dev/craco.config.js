@@ -1,5 +1,5 @@
 const lessPlugin = require("craco-less");
-const path = require('path')
+const path = require("path");
 
 module.exports = {
   plugins: [
@@ -8,21 +8,20 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            javascriptEnabled: true
-          }
-        }
-      }
-    }
+            javascriptEnabled: true,
+          },
+        },
+      },
+    },
   ],
-  webpack:{
-    alias:{
-      '+': path.resolve(__dirname, 'src/component/icons'),
-      '#': path.resolve(__dirname,'src/component'),
-      '@': path.resolve(__dirname, 'src/')
-    }
+  webpack: {
+    alias: {
+      "+": path.resolve(__dirname, "src/component/icons"),
+      "#": path.resolve(__dirname, "src/component"),
+      "@": path.resolve(__dirname, "src/"),
+    },
   },
   babel: {
-    plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]]
+    plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]],
   },
-  
-}
+};

@@ -25,9 +25,7 @@
     "build": "craco build",
     "route":"node ./src/route/generate.js",
     "test": "craco test",
-    "eject": "react-scripts eject",
-    "update": "npm run route",
-    "prestart": "node ./src/route/generate.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

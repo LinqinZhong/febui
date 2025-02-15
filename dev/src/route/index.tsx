@@ -107,6 +107,15 @@ export const FebRoutes = function () {
                     <p>copyright © Feb-ui Developer 2025</p>
                 </FLayoutFooter>
             </FLayout>
+
+            <FButton style={
+                {
+                    position: 'fixed',
+                    bottom: 10,
+                    right: 10,
+                    zIndex: 100,
+                }
+            } shape='circle'>更</FButton>
         </div>
     )
 }
