@@ -10,6 +10,8 @@ import { FLayoutHead } from '#/layout/layout/FLayoutHead'
 import { FLayoutFooter } from '#/layout/layout/FLayoutFooter'
 import { FButton } from '#/base/button/FButton'
 import { FMenu } from '#/nav/menu/FMenu'
+import { toast } from '@/api/toast'
+import { FIconMessage } from '+/FIconMessage'
 
 export const FebRoutes = function () {
     let tag = 0
@@ -100,7 +102,29 @@ export const FebRoutes = function () {
                     }
                 </FLayoutAside>
                 <FLayoutContent>
-                    {useRoutes(routes)}
+                    <div>
+                        {useRoutes(routes)}
+                        <div onClick={() => {
+                            toast.warn('糟糕，还没做好')
+                        }} style={{
+                            width: 50,
+                            height: 50,
+                            position: 'fixed',
+                            bottom: 100,
+                            right: 50,
+                            padding: 12,
+                            boxSizing: 'border-box',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            background: 'var(--text-color-16)',
+                            boxShadow: '1px 1px 5px #555',
+                            cursor: 'pointer',
+                            borderRadius: 50,
+                        }}>
+                            <FIconMessage />
+                        </div>
+                    </div>
                 </FLayoutContent>
                 <FLayoutFooter style={{ textAlign: 'center', background: 'var(--text-color-15)', color: 'var(--text-color-5)' }} showDiv>
                     <p>FEB-UI是一个React生态的组件库，巴拉巴拉~</p>

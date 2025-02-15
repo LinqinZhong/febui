@@ -23,7 +23,7 @@ type Props = FebProps<{
   throttle?: number
   // 加载中
   loading?: boolean
-}>
+}, HTMLDivElement>
 
 /**
  * 按钮组件
@@ -82,7 +82,7 @@ export class FButton extends Component<Props> {
       styles[this.props.size as string],
     ]
     if (loading) className.push(styles.loading)
-    const handleClick = (e: React.SyntheticEvent) => {  
+    const handleClick = (e: React.SyntheticEvent) => {
       e.stopPropagation()
       if (this.props.loading) return
       if (this.onClick) {
@@ -90,7 +90,7 @@ export class FButton extends Component<Props> {
       }
     }
     return (
-      <div className={className.join(' ')} onClick={handleClick}>
+      <div style={this.props.style} className={className.join(' ')} onClick={handleClick}>
         {loading}
         <span>{this.props.children || '确定'}</span>
       </div>
