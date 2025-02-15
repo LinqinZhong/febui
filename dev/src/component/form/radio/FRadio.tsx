@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { classnames } from "@/utils/class.util"
 import styles from "./style.module.less"
-type Props = FebProps<{
+import FRadioGroup from "./FRadioGroup"
+export type FRadioProps = FebProps<{
     value?: RadioValue
     // value?: boolean
     checked?: boolean
@@ -17,14 +18,18 @@ type Props = FebProps<{
     }) => void
 }>
 
+interface Attr {
+    Group: typeof FRadioGroup
+}
+
 /**
  * Radio单选框
  * @author xiaotong.wen
  * @date 2025/02/07 11:25:53
  */
-const FRadio: React.FC<Props> = function (props) {
+const FRadio: React.FC<FRadioProps> & Attr = function (props) {
 
-    const { style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children } = props
+    const { style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children, className } = props
 
     const [active, setActive] = useState(false)
 
@@ -62,13 +67,13 @@ const FRadio: React.FC<Props> = function (props) {
         checked === undefined && setActive(!active)
 
         if (onChange) {
-            onChange(!active, { e })
+            onChange(value || !active, { e })
         }
 
     }
 
 
-    return (<div style={{ display: "inline-block" }}>
+    return (<div style={{ display: "inline-block" }} className={className}>
         <input type="radio" className={classnames(styles['radio__form'])} />
         {type === 'radio' ? (
             <div className={classnames(...radioClass)} >
@@ -82,5 +87,7 @@ const FRadio: React.FC<Props> = function (props) {
         )}
     </div>)
 }
+
+FRadio.Group = FRadioGroup
 
 export default FRadio

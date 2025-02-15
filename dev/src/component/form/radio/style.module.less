@@ -1,7 +1,6 @@
 @import '../../../theme/canon/style/mixin.less';;
 
     
-    
     .radio{
         display: inline-flex;
         --color:var(--info-color-6);
@@ -113,6 +112,56 @@
             .disabled();
         }
     
+    }
+
+    .group-container{
+
+        --container-bg-color:var(--text-color-16);
+        --outline-active:var(--primary-color-8);
+        --default-index: 1 ;
+        --default-active-index: 2;
+
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.7143rem;
+        width: fit-content;
+
+        &.button-group-outline{
+            gap: 0;
+            background-color: var(--container-bg-color);
+            overflow: hidden;
+            &>div{
+                position: relative;
+                z-index: var(--default-index);
+            }
+            &>div:not(:first-child){
+                margin-left: -0.0714rem;
+            }
+            &>div:first-child{
+                border-radius: .1071rem 0 0 .1071rem;
+                overflow: hidden;
+            }
+            &>div:last-child{
+                border-radius: 0 .1071rem .1071rem 0;
+                overflow: hidden;
+            }
+            &>div.active{
+                z-index: var(--default-active-index);
+            }
+            
+        }
+
+        &.button-group-filled{
+            padding: .1429rem;
+            border-radius: .1429rem;
+            width: fit-content;
+            background-color: #eee;
+            gap: 0;
+            transition: all var(--transition-duration);
+
+        }
+
     }
     
 

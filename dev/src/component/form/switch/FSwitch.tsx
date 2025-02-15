@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import styles from './style.module.less'
-import { Size } from '@/enum/base'
 import { isBoolean } from '@/utils/type.util'
 import { FLoading } from '#/base/loading/FLoading'
 
@@ -28,7 +27,7 @@ export default class FSwitch extends Component<Props> {
   state: Readonly<{ isActive: boolean }> = { isActive: true }
 
   static defaultProps = {
-    size: Size.Medium,
+    size: 'medium',
     disabled: false,
     inline: false,
     value: true,
@@ -87,7 +86,7 @@ export default class FSwitch extends Component<Props> {
     ]
     const coreClass = [
       styles.core,
-      styles[size ? size : Size.Medium as string],
+      styles[size ? size : 'medium' as string],
       width && styles['nofit'],
       styles[isActive ? 'on' : 'off']
     ]
