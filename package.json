@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "install": "cd dev && npm install && cd icon npm install",
-    "route":"cd dev && npm run route",
-    "dev": "cd dev && npm run start",
-    "update": "cd dev && npm run route",
+    "dev": "concurrently \"npm run dev-server\" \"npm run dev-front\"",
+    "dev-front": "cd dev && npm run start",
+    "dev-server": "node ./server/index.js",
     "snippets": "node ./snippets/index.js",
     "dev-icon": "cd icon && npm run start"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21"
+  }
 }

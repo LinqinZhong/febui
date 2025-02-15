@@ -29,10 +29,6 @@ npm run route
 ```shell
 npm run dev
 ```
-### （四）更新（=生成路由文件）
-```shell
-npm run update
-```
 
 ### （五）创建代码片段
 ```shell
