@@ -6,6 +6,7 @@ export type FRadioProps = FebProps<{
     value?: RadioValue
     // value?: boolean
     checked?: boolean
+    defaultChecked?: boolean
     allowUncheck?: boolean
     disabled?: boolean
     name?: string
@@ -30,9 +31,9 @@ interface Attr {
  */
 const FRadio: React.FC<FRadioProps> & Attr = function (props) {
 
-    const { size = 'medium', style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children, className } = props
+    const { defaultChecked = false, size = 'medium', style, value, checked, allowUncheck = true, disabled = false, readonly = false, type = 'radio', variant = 'dashed', onChange, children, className } = props
 
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(defaultChecked)
 
     const inputClass = [
         styles['radio__input'],

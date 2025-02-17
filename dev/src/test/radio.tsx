@@ -11,6 +11,8 @@ import FSwitch from '#/form/switch/FSwitch'
 export const BaseTest = function () {
     return (
         <div style={{ display: "flex", width: '800px', height: '30px', backgroundColor: '#fff', padding: '10px', alignItems: 'center' }}>
+            <FRadio>默认初始未选中</FRadio> &nbsp;&nbsp;
+            <FRadio defaultChecked>初始选中</FRadio> &nbsp;&nbsp;
             <FRadio checked={false}>未选中</FRadio> &nbsp;&nbsp;
             <FRadio allowUncheck>取消选中</FRadio> &nbsp;&nbsp;
             <FRadio checked>已选中</FRadio> &nbsp;&nbsp;
