@@ -4,6 +4,8 @@ const fs = require("fs");
 const path = require("path");
 const lodash = require('lodash')
 
+generate()
+
 const update = lodash.debounce(() => {
   generate()
 }, 1000)
