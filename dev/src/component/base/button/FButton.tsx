@@ -49,6 +49,11 @@ export class FButton extends Component<Props> {
     super(props)
     this.initOnClick()
   }
+
+  componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<{}>, snapshot?: any): void {
+    this.initOnClick()
+  }
+
   /**
    * 初始化点击事件
    */
